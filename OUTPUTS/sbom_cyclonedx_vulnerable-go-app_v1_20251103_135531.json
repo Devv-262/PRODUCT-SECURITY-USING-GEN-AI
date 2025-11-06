@@ -1,0 +1,2242 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "serialNumber": "urn:uuid:cce7346b-d9e5-4174-add3-4a3d8b1df91d",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2025-11-03T08:25:34+00:00",
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "manufacturer": {
+            "name": "Aqua Security Software Ltd."
+          },
+          "group": "aquasecurity",
+          "name": "trivy",
+          "version": "0.64.1"
+        }
+      ]
+    },
+    "component": {
+      "bom-ref": "91a4966d-2433-4080-9b2c-5e1fee510147",
+      "type": "container",
+      "name": "vulnerable-go-app:v1",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:DiffID",
+          "value": "sha256:63a6bdb95b087022be608e6cfbb4b39997dce15b2b1e333eb3d00b4a2c1f477b"
+        },
+        {
+          "name": "aquasecurity:trivy:DiffID",
+          "value": "sha256:65a45a335a2b7d4860270e0b4fafd24de4b1702c735d66cb455abbcff03b6d08"
+        },
+        {
+          "name": "aquasecurity:trivy:DiffID",
+          "value": "sha256:8d3ac3489996423f53d6087c81180006263b79f206d3fdec9e66f0e27ceb8759"
+        },
+        {
+          "name": "aquasecurity:trivy:DiffID",
+          "value": "sha256:99b499604ffc766b14603c196d6fb93e414fd143df5dc0666d5c30e54d61af23"
+        },
+        {
+          "name": "aquasecurity:trivy:DiffID",
+          "value": "sha256:b6f786c730a90c1b65224839b102440c16a0b07f02887474a78b20f2f523380b"
+        },
+        {
+          "name": "aquasecurity:trivy:DiffID",
+          "value": "sha256:c3c01c74818afc19279748bf4a0568bbf4b52d26d58278997a4a6c5a0a05dc8c"
+        },
+        {
+          "name": "aquasecurity:trivy:DiffID",
+          "value": "sha256:dcc67947cedd3e9f5bbc9b6c325ee5bc5f960c91d2baa5fa50ba0312d789f420"
+        },
+        {
+          "name": "aquasecurity:trivy:DiffID",
+          "value": "sha256:f39d18947a7467c711a60ebf15d2ff46d9524caafcb5aeb4e8eb19c14d4ba78e"
+        },
+        {
+          "name": "aquasecurity:trivy:DiffID",
+          "value": "sha256:f8313963225149c2d7fec9f6e0635a3ae6509e18af9449b3952c21fe5b78d063"
+        },
+        {
+          "name": "aquasecurity:trivy:ImageID",
+          "value": "sha256:4df2dcb219b9918b6f5a398c967dc9175801366bc64e0c98adda6d4757ab933b"
+        },
+        {
+          "name": "aquasecurity:trivy:RepoTag",
+          "value": "vulnerable-go-app:v1"
+        },
+        {
+          "name": "aquasecurity:trivy:SchemaVersion",
+          "value": "2"
+        },
+        {
+          "name": "aquasecurity:trivy:Size",
+          "value": "464380416"
+        }
+      ]
+    }
+  },
+  "components": [
+    {
+      "bom-ref": "030b649f-bc17-43ff-9bca-f619e54daf07",
+      "type": "library",
+      "name": "stdlib",
+      "version": "v1.16.15",
+      "purl": "pkg:golang/stdlib@v1.16.15",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:f8313963225149c2d7fec9f6e0635a3ae6509e18af9449b3952c21fe5b78d063"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "stdlib@v1.16.15"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "0fc9978d-7c8e-4cb2-86d6-f40e8d8ba0e7",
+      "type": "library",
+      "name": "stdlib",
+      "version": "v1.16.15",
+      "purl": "pkg:golang/stdlib@v1.16.15",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:f8313963225149c2d7fec9f6e0635a3ae6509e18af9449b3952c21fe5b78d063"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "stdlib@v1.16.15"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "157cac05-c2ab-4b51-b97e-a8d481aa38ea",
+      "type": "application",
+      "name": "usr/local/go/pkg/tool/linux_amd64/doc",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:Class",
+          "value": "lang-pkgs"
+        },
+        {
+          "name": "aquasecurity:trivy:Type",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "1ca3814a-98f6-42da-8e66-dbcb6704a3b2",
+      "type": "library",
+      "name": "stdlib",
+      "version": "v1.16.15",
+      "purl": "pkg:golang/stdlib@v1.16.15",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:f8313963225149c2d7fec9f6e0635a3ae6509e18af9449b3952c21fe5b78d063"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "stdlib@v1.16.15"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "23ebdf20-53ae-4ca3-9cbf-d2961bd3eec7",
+      "type": "library",
+      "name": "stdlib",
+      "version": "v1.16.15",
+      "purl": "pkg:golang/stdlib@v1.16.15",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:f8313963225149c2d7fec9f6e0635a3ae6509e18af9449b3952c21fe5b78d063"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "stdlib@v1.16.15"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "2d888ad7-6eab-450e-a88e-5e788172b41b",
+      "type": "application",
+      "name": "usr/local/go/pkg/tool/linux_amd64/cover",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:Class",
+          "value": "lang-pkgs"
+        },
+        {
+          "name": "aquasecurity:trivy:Type",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "338cf632-b83a-43ca-a8c7-11ed85f9d107",
+      "type": "application",
+      "name": "usr/local/go/pkg/tool/linux_amd64/pprof",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:Class",
+          "value": "lang-pkgs"
+        },
+        {
+          "name": "aquasecurity:trivy:Type",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "344d34fa-634b-48b6-9601-d085dba873a1",
+      "type": "library",
+      "name": "stdlib",
+      "version": "v1.16.15",
+      "purl": "pkg:golang/stdlib@v1.16.15",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:f8313963225149c2d7fec9f6e0635a3ae6509e18af9449b3952c21fe5b78d063"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "stdlib@v1.16.15"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "3555398d-96af-42a5-8573-10fdeae782b6",
+      "type": "application",
+      "name": "usr/local/go/pkg/tool/linux_amd64/buildid",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:Class",
+          "value": "lang-pkgs"
+        },
+        {
+          "name": "aquasecurity:trivy:Type",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "35ea83db-dca0-46c3-b5c0-03eea0298cda",
+      "type": "library",
+      "name": "stdlib",
+      "version": "v1.16.15",
+      "purl": "pkg:golang/stdlib@v1.16.15",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:f8313963225149c2d7fec9f6e0635a3ae6509e18af9449b3952c21fe5b78d063"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "stdlib@v1.16.15"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "36d8794a-44e7-4225-bca8-743d1211d8c7",
+      "type": "application",
+      "name": "usr/local/go/pkg/tool/linux_amd64/test2json",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:Class",
+          "value": "lang-pkgs"
+        },
+        {
+          "name": "aquasecurity:trivy:Type",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "3efbe373-6699-40c3-9f4f-1728da3fbcf0",
+      "type": "library",
+      "name": "stdlib",
+      "version": "v1.16.15",
+      "purl": "pkg:golang/stdlib@v1.16.15",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:f8313963225149c2d7fec9f6e0635a3ae6509e18af9449b3952c21fe5b78d063"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "stdlib@v1.16.15"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "3f5311b2-d27e-47c6-bf00-40c15e88e1c7",
+      "type": "application",
+      "name": "usr/local/go/pkg/tool/linux_amd64/nm",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:Class",
+          "value": "lang-pkgs"
+        },
+        {
+          "name": "aquasecurity:trivy:Type",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "3f63492b-cfb2-4a3c-83eb-74e63639f173",
+      "type": "application",
+      "name": "usr/local/go/pkg/tool/linux_amd64/link",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:Class",
+          "value": "lang-pkgs"
+        },
+        {
+          "name": "aquasecurity:trivy:Type",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "429f44b6-0fb7-40a7-ae61-c10d7a1ea458",
+      "type": "application",
+      "name": "usr/local/go/pkg/tool/linux_amd64/trace",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:Class",
+          "value": "lang-pkgs"
+        },
+        {
+          "name": "aquasecurity:trivy:Type",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "50a58aed-0413-4e0f-9171-124ecbc0d18e",
+      "type": "application",
+      "name": "usr/local/go/pkg/tool/linux_amd64/addr2line",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:Class",
+          "value": "lang-pkgs"
+        },
+        {
+          "name": "aquasecurity:trivy:Type",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "54f603d3-154a-4730-898e-152e222fba96",
+      "type": "application",
+      "name": "usr/local/go/bin/go",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:Class",
+          "value": "lang-pkgs"
+        },
+        {
+          "name": "aquasecurity:trivy:Type",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "58682cc6-999a-420f-ad48-4c058a57b232",
+      "type": "library",
+      "name": "stdlib",
+      "version": "v1.16.15",
+      "purl": "pkg:golang/stdlib@v1.16.15",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:f8313963225149c2d7fec9f6e0635a3ae6509e18af9449b3952c21fe5b78d063"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "stdlib@v1.16.15"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "62366c07-996e-43f9-a800-3c6e3d0536f5",
+      "type": "library",
+      "name": "stdlib",
+      "version": "v1.16.15",
+      "purl": "pkg:golang/stdlib@v1.16.15",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:f8313963225149c2d7fec9f6e0635a3ae6509e18af9449b3952c21fe5b78d063"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "stdlib@v1.16.15"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "65980bc6-35ff-4525-ba84-21c283c84b4f",
+      "type": "operating-system",
+      "name": "alpine",
+      "version": "3.15.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:Class",
+          "value": "os-pkgs"
+        },
+        {
+          "name": "aquasecurity:trivy:Type",
+          "value": "alpine"
+        }
+      ]
+    },
+    {
+      "bom-ref": "76449d33-83db-476a-8ec6-fd4975c7aa9c",
+      "type": "library",
+      "name": "stdlib",
+      "version": "v1.16.15",
+      "purl": "pkg:golang/stdlib@v1.16.15",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:f8313963225149c2d7fec9f6e0635a3ae6509e18af9449b3952c21fe5b78d063"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "stdlib@v1.16.15"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "7a7cc6ae-8004-44c0-ba86-c455e970d9ea",
+      "type": "application",
+      "name": "usr/local/go/pkg/tool/linux_amd64/cgo",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:Class",
+          "value": "lang-pkgs"
+        },
+        {
+          "name": "aquasecurity:trivy:Type",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "7bffeac4-e15a-423f-994e-7c35ef9f814a",
+      "type": "library",
+      "name": "stdlib",
+      "version": "v1.16.15",
+      "purl": "pkg:golang/stdlib@v1.16.15",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:f8313963225149c2d7fec9f6e0635a3ae6509e18af9449b3952c21fe5b78d063"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "stdlib@v1.16.15"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "83994ddb-93c1-4fe2-9548-7fc0809553c4",
+      "type": "application",
+      "name": "usr/local/go/pkg/tool/linux_amd64/vet",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:Class",
+          "value": "lang-pkgs"
+        },
+        {
+          "name": "aquasecurity:trivy:Type",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "89939b3c-db8f-47a8-848d-3a5cf22b2b83",
+      "type": "application",
+      "name": "usr/local/go/bin/gofmt",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:Class",
+          "value": "lang-pkgs"
+        },
+        {
+          "name": "aquasecurity:trivy:Type",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "8b9b406c-8acf-4bb9-bf39-80213464c32f",
+      "type": "library",
+      "name": "stdlib",
+      "version": "v1.16.15",
+      "purl": "pkg:golang/stdlib@v1.16.15",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:f8313963225149c2d7fec9f6e0635a3ae6509e18af9449b3952c21fe5b78d063"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "stdlib@v1.16.15"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "8bdfac7e-acc7-4876-90f8-f807f52827d2",
+      "type": "library",
+      "name": "stdlib",
+      "version": "v1.16.15",
+      "purl": "pkg:golang/stdlib@v1.16.15",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:f8313963225149c2d7fec9f6e0635a3ae6509e18af9449b3952c21fe5b78d063"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "stdlib@v1.16.15"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "8df69625-3b16-4c50-a446-a31bad702671",
+      "type": "application",
+      "name": "usr/local/go/pkg/tool/linux_amd64/dist",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:Class",
+          "value": "lang-pkgs"
+        },
+        {
+          "name": "aquasecurity:trivy:Type",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "8eed344b-b344-4783-a2a2-0dd292aa76d3",
+      "type": "library",
+      "name": "stdlib",
+      "version": "v1.16.15",
+      "purl": "pkg:golang/stdlib@v1.16.15",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:f8313963225149c2d7fec9f6e0635a3ae6509e18af9449b3952c21fe5b78d063"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "stdlib@v1.16.15"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "a346894a-1b25-421c-baa8-c060c9e37569",
+      "type": "application",
+      "name": "usr/local/go/pkg/tool/linux_amd64/asm",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:Class",
+          "value": "lang-pkgs"
+        },
+        {
+          "name": "aquasecurity:trivy:Type",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "a64030d4-b6a4-45d3-8f7d-76312542e770",
+      "type": "application",
+      "name": "usr/local/go/pkg/tool/linux_amd64/fix",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:Class",
+          "value": "lang-pkgs"
+        },
+        {
+          "name": "aquasecurity:trivy:Type",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "af3a74b7-6c79-4c15-8e4f-975f10edf5ce",
+      "type": "application",
+      "name": "usr/local/go/pkg/tool/linux_amd64/compile",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:Class",
+          "value": "lang-pkgs"
+        },
+        {
+          "name": "aquasecurity:trivy:Type",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "bd5d0a23-465d-4c8e-8b57-1006e23e98e5",
+      "type": "library",
+      "name": "stdlib",
+      "version": "v1.16.15",
+      "purl": "pkg:golang/stdlib@v1.16.15",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:f8313963225149c2d7fec9f6e0635a3ae6509e18af9449b3952c21fe5b78d063"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "stdlib@v1.16.15"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "c36f79f0-0ef5-405d-a18c-9864a3a8f82a",
+      "type": "application",
+      "name": "go-app",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:Class",
+          "value": "lang-pkgs"
+        },
+        {
+          "name": "aquasecurity:trivy:Type",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "d2039826-3fc6-4836-bb7e-1f4c3fa3e1d2",
+      "type": "library",
+      "name": "stdlib",
+      "version": "v1.16.15",
+      "purl": "pkg:golang/stdlib@v1.16.15",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:f8313963225149c2d7fec9f6e0635a3ae6509e18af9449b3952c21fe5b78d063"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "stdlib@v1.16.15"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "d45e8247-a4ef-4d44-8a7d-07fa75d537c4",
+      "type": "library",
+      "name": "stdlib",
+      "version": "v1.16.15",
+      "purl": "pkg:golang/stdlib@v1.16.15",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:f8313963225149c2d7fec9f6e0635a3ae6509e18af9449b3952c21fe5b78d063"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "stdlib@v1.16.15"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "ddaf7bbd-18db-402f-9033-174b34c4169a",
+      "type": "application",
+      "name": "usr/local/go/pkg/tool/linux_amd64/objdump",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:Class",
+          "value": "lang-pkgs"
+        },
+        {
+          "name": "aquasecurity:trivy:Type",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "de569399-98e4-43dc-a3d5-395b7fbfdf51",
+      "type": "application",
+      "name": "usr/local/go/pkg/tool/linux_amd64/pack",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:Class",
+          "value": "lang-pkgs"
+        },
+        {
+          "name": "aquasecurity:trivy:Type",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "e4157dd2-83ae-42a5-a089-98dfbb1e347f",
+      "type": "library",
+      "name": "stdlib",
+      "version": "v1.16.15",
+      "purl": "pkg:golang/stdlib@v1.16.15",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:f8313963225149c2d7fec9f6e0635a3ae6509e18af9449b3952c21fe5b78d063"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "stdlib@v1.16.15"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "e63bd09f-e7d5-4f22-8d46-cee66eda145e",
+      "type": "library",
+      "name": "stdlib",
+      "version": "v1.16.15",
+      "purl": "pkg:golang/stdlib@v1.16.15",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:99b499604ffc766b14603c196d6fb93e414fd143df5dc0666d5c30e54d61af23"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "stdlib@v1.16.15"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "f2b724d3-0133-47bf-824c-bfa0415e4eff",
+      "type": "library",
+      "name": "stdlib",
+      "version": "v1.16.15",
+      "purl": "pkg:golang/stdlib@v1.16.15",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:f8313963225149c2d7fec9f6e0635a3ae6509e18af9449b3952c21fe5b78d063"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "stdlib@v1.16.15"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:apk/alpine/alpine-baselayout@3.2.0-r18?arch=x86_64&distro=3.15.0",
+      "type": "library",
+      "supplier": {
+        "name": "Natanael Copa <ncopa@alpinelinux.org>"
+      },
+      "name": "alpine-baselayout",
+      "version": "3.2.0-r18",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "132992eab020986b3b5d886a77212889680467a0"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "GPL-2.0-only"
+          }
+        }
+      ],
+      "purl": "pkg:apk/alpine/alpine-baselayout@3.2.0-r18?arch=x86_64&distro=3.15.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:8d3ac3489996423f53d6087c81180006263b79f206d3fdec9e66f0e27ceb8759"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "alpine-baselayout@3.2.0-r18"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "alpine"
+        },
+        {
+          "name": "aquasecurity:trivy:SrcName",
+          "value": "alpine-baselayout"
+        },
+        {
+          "name": "aquasecurity:trivy:SrcVersion",
+          "value": "3.2.0-r18"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:apk/alpine/alpine-keys@2.4-r1?arch=x86_64&distro=3.15.0",
+      "type": "library",
+      "supplier": {
+        "name": "Natanael Copa <ncopa@alpinelinux.org>"
+      },
+      "name": "alpine-keys",
+      "version": "2.4-r1",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "903176b2d2a8ddefd1ba6940f19ad17c2c1d4aff"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:apk/alpine/alpine-keys@2.4-r1?arch=x86_64&distro=3.15.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:8d3ac3489996423f53d6087c81180006263b79f206d3fdec9e66f0e27ceb8759"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "alpine-keys@2.4-r1"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "alpine"
+        },
+        {
+          "name": "aquasecurity:trivy:SrcName",
+          "value": "alpine-keys"
+        },
+        {
+          "name": "aquasecurity:trivy:SrcVersion",
+          "value": "2.4-r1"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:apk/alpine/apk-tools@2.12.7-r3?arch=x86_64&distro=3.15.0",
+      "type": "library",
+      "supplier": {
+        "name": "Natanael Copa <ncopa@alpinelinux.org>"
+      },
+      "name": "apk-tools",
+      "version": "2.12.7-r3",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "ddf3ddf8545768bc323649559feaae1560f29273"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "GPL-2.0-only"
+          }
+        }
+      ],
+      "purl": "pkg:apk/alpine/apk-tools@2.12.7-r3?arch=x86_64&distro=3.15.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:8d3ac3489996423f53d6087c81180006263b79f206d3fdec9e66f0e27ceb8759"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "apk-tools@2.12.7-r3"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "alpine"
+        },
+        {
+          "name": "aquasecurity:trivy:SrcName",
+          "value": "apk-tools"
+        },
+        {
+          "name": "aquasecurity:trivy:SrcVersion",
+          "value": "2.12.7-r3"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:apk/alpine/busybox@1.34.1-r3?arch=x86_64&distro=3.15.0",
+      "type": "library",
+      "supplier": {
+        "name": "Natanael Copa <ncopa@alpinelinux.org>"
+      },
+      "name": "busybox",
+      "version": "1.34.1-r3",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "a008d171f7475e4579601df2a82c8ac11448883f"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "GPL-2.0-only"
+          }
+        }
+      ],
+      "purl": "pkg:apk/alpine/busybox@1.34.1-r3?arch=x86_64&distro=3.15.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:8d3ac3489996423f53d6087c81180006263b79f206d3fdec9e66f0e27ceb8759"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "busybox@1.34.1-r3"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "alpine"
+        },
+        {
+          "name": "aquasecurity:trivy:SrcName",
+          "value": "busybox"
+        },
+        {
+          "name": "aquasecurity:trivy:SrcVersion",
+          "value": "1.34.1-r3"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:apk/alpine/ca-certificates-bundle@20191127-r7?arch=x86_64&distro=3.15.0",
+      "type": "library",
+      "supplier": {
+        "name": "Natanael Copa <ncopa@alpinelinux.org>"
+      },
+      "name": "ca-certificates-bundle",
+      "version": "20191127-r7",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "2002a905833bcee71d5474b36c8b759b4c807ce0"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MPL-2.0"
+          }
+        },
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:apk/alpine/ca-certificates-bundle@20191127-r7?arch=x86_64&distro=3.15.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:8d3ac3489996423f53d6087c81180006263b79f206d3fdec9e66f0e27ceb8759"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "ca-certificates-bundle@20191127-r7"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "alpine"
+        },
+        {
+          "name": "aquasecurity:trivy:SrcName",
+          "value": "ca-certificates"
+        },
+        {
+          "name": "aquasecurity:trivy:SrcVersion",
+          "value": "20191127-r7"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:apk/alpine/ca-certificates@20191127-r7?arch=x86_64&distro=3.15.0",
+      "type": "library",
+      "supplier": {
+        "name": "Natanael Copa <ncopa@alpinelinux.org>"
+      },
+      "name": "ca-certificates",
+      "version": "20191127-r7",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "f3c6e6ba4a28368a890f5fbce3e003b034fd719e"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MPL-2.0"
+          }
+        },
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:apk/alpine/ca-certificates@20191127-r7?arch=x86_64&distro=3.15.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:63a6bdb95b087022be608e6cfbb4b39997dce15b2b1e333eb3d00b4a2c1f477b"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "ca-certificates@20191127-r7"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "alpine"
+        },
+        {
+          "name": "aquasecurity:trivy:SrcName",
+          "value": "ca-certificates"
+        },
+        {
+          "name": "aquasecurity:trivy:SrcVersion",
+          "value": "20191127-r7"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:apk/alpine/libc-utils@0.7.2-r3?arch=x86_64&distro=3.15.0",
+      "type": "library",
+      "supplier": {
+        "name": "Natanael Copa <ncopa@alpinelinux.org>"
+      },
+      "name": "libc-utils",
+      "version": "0.7.2-r3",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "798de3ebb57f3e28f408080746935f213a099722"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-2-Clause"
+          }
+        },
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:apk/alpine/libc-utils@0.7.2-r3?arch=x86_64&distro=3.15.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:8d3ac3489996423f53d6087c81180006263b79f206d3fdec9e66f0e27ceb8759"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "libc-utils@0.7.2-r3"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "alpine"
+        },
+        {
+          "name": "aquasecurity:trivy:SrcName",
+          "value": "libc-dev"
+        },
+        {
+          "name": "aquasecurity:trivy:SrcVersion",
+          "value": "0.7.2-r3"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:apk/alpine/libcrypto1.1@1.1.1l-r7?arch=x86_64&distro=3.15.0",
+      "type": "library",
+      "supplier": {
+        "name": "Timo Teras <timo.teras@iki.fi>"
+      },
+      "name": "libcrypto1.1",
+      "version": "1.1.1l-r7",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "2ac06f2de581bd9e90d9da3da3267a59961b6bc4"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "OpenSSL"
+          }
+        }
+      ],
+      "purl": "pkg:apk/alpine/libcrypto1.1@1.1.1l-r7?arch=x86_64&distro=3.15.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:8d3ac3489996423f53d6087c81180006263b79f206d3fdec9e66f0e27ceb8759"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "libcrypto1.1@1.1.1l-r7"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "alpine"
+        },
+        {
+          "name": "aquasecurity:trivy:SrcName",
+          "value": "openssl"
+        },
+        {
+          "name": "aquasecurity:trivy:SrcVersion",
+          "value": "1.1.1l-r7"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:apk/alpine/libretls@3.3.4-r2?arch=x86_64&distro=3.15.0",
+      "type": "library",
+      "supplier": {
+        "name": "Ariadne Conill <ariadne@dereferenced.org>"
+      },
+      "name": "libretls",
+      "version": "3.3.4-r2",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "5108eeb5335ea8a420325290cb26459ee98e8377"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "ISC"
+          }
+        },
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        },
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:apk/alpine/libretls@3.3.4-r2?arch=x86_64&distro=3.15.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:8d3ac3489996423f53d6087c81180006263b79f206d3fdec9e66f0e27ceb8759"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "libretls@3.3.4-r2"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "alpine"
+        },
+        {
+          "name": "aquasecurity:trivy:SrcName",
+          "value": "libretls"
+        },
+        {
+          "name": "aquasecurity:trivy:SrcVersion",
+          "value": "3.3.4-r2"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:apk/alpine/libssl1.1@1.1.1l-r7?arch=x86_64&distro=3.15.0",
+      "type": "library",
+      "supplier": {
+        "name": "Timo Teras <timo.teras@iki.fi>"
+      },
+      "name": "libssl1.1",
+      "version": "1.1.1l-r7",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "37d6fed564884a9d4dfa0fb9abacf10b9a5d4f45"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "OpenSSL"
+          }
+        }
+      ],
+      "purl": "pkg:apk/alpine/libssl1.1@1.1.1l-r7?arch=x86_64&distro=3.15.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:8d3ac3489996423f53d6087c81180006263b79f206d3fdec9e66f0e27ceb8759"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "libssl1.1@1.1.1l-r7"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "alpine"
+        },
+        {
+          "name": "aquasecurity:trivy:SrcName",
+          "value": "openssl"
+        },
+        {
+          "name": "aquasecurity:trivy:SrcVersion",
+          "value": "1.1.1l-r7"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:apk/alpine/musl-utils@1.2.2-r7?arch=x86_64&distro=3.15.0",
+      "type": "library",
+      "supplier": {
+        "name": "Timo Teräs <timo.teras@iki.fi>"
+      },
+      "name": "musl-utils",
+      "version": "1.2.2-r7",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "3f9d1c7c9892b07a2ab18453c8e10e94988b9f7a"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        },
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        },
+        {
+          "license": {
+            "name": "GPL-2.0-or-later"
+          }
+        }
+      ],
+      "purl": "pkg:apk/alpine/musl-utils@1.2.2-r7?arch=x86_64&distro=3.15.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:8d3ac3489996423f53d6087c81180006263b79f206d3fdec9e66f0e27ceb8759"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "musl-utils@1.2.2-r7"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "alpine"
+        },
+        {
+          "name": "aquasecurity:trivy:SrcName",
+          "value": "musl"
+        },
+        {
+          "name": "aquasecurity:trivy:SrcVersion",
+          "value": "1.2.2-r7"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:apk/alpine/musl@1.2.2-r7?arch=x86_64&distro=3.15.0",
+      "type": "library",
+      "supplier": {
+        "name": "Timo Teräs <timo.teras@iki.fi>"
+      },
+      "name": "musl",
+      "version": "1.2.2-r7",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "0de6f48cdcad92b8cf5b837f78a2d9e370703a5c"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:apk/alpine/musl@1.2.2-r7?arch=x86_64&distro=3.15.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:8d3ac3489996423f53d6087c81180006263b79f206d3fdec9e66f0e27ceb8759"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "musl@1.2.2-r7"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "alpine"
+        },
+        {
+          "name": "aquasecurity:trivy:SrcName",
+          "value": "musl"
+        },
+        {
+          "name": "aquasecurity:trivy:SrcVersion",
+          "value": "1.2.2-r7"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:apk/alpine/scanelf@1.3.3-r0?arch=x86_64&distro=3.15.0",
+      "type": "library",
+      "supplier": {
+        "name": "Natanael Copa <ncopa@alpinelinux.org>"
+      },
+      "name": "scanelf",
+      "version": "1.3.3-r0",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "d7f7590e450870a4f79671c2369b31b5bb07349a"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "GPL-2.0-only"
+          }
+        }
+      ],
+      "purl": "pkg:apk/alpine/scanelf@1.3.3-r0?arch=x86_64&distro=3.15.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:8d3ac3489996423f53d6087c81180006263b79f206d3fdec9e66f0e27ceb8759"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "scanelf@1.3.3-r0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "alpine"
+        },
+        {
+          "name": "aquasecurity:trivy:SrcName",
+          "value": "pax-utils"
+        },
+        {
+          "name": "aquasecurity:trivy:SrcVersion",
+          "value": "1.3.3-r0"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:apk/alpine/ssl_client@1.34.1-r3?arch=x86_64&distro=3.15.0",
+      "type": "library",
+      "supplier": {
+        "name": "Natanael Copa <ncopa@alpinelinux.org>"
+      },
+      "name": "ssl_client",
+      "version": "1.34.1-r3",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "2a0308c3c9ef5f58713d49113a9192db8c947f83"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "GPL-2.0-only"
+          }
+        }
+      ],
+      "purl": "pkg:apk/alpine/ssl_client@1.34.1-r3?arch=x86_64&distro=3.15.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:8d3ac3489996423f53d6087c81180006263b79f206d3fdec9e66f0e27ceb8759"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "ssl_client@1.34.1-r3"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "alpine"
+        },
+        {
+          "name": "aquasecurity:trivy:SrcName",
+          "value": "busybox"
+        },
+        {
+          "name": "aquasecurity:trivy:SrcVersion",
+          "value": "1.34.1-r3"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:apk/alpine/zlib@1.2.11-r3?arch=x86_64&distro=3.15.0",
+      "type": "library",
+      "supplier": {
+        "name": "Natanael Copa <ncopa@alpinelinux.org>"
+      },
+      "name": "zlib",
+      "version": "1.2.11-r3",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "581a3ee7b26576555ed2256dda7f083fafaf3461"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Zlib"
+          }
+        }
+      ],
+      "purl": "pkg:apk/alpine/zlib@1.2.11-r3?arch=x86_64&distro=3.15.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:8d3ac3489996423f53d6087c81180006263b79f206d3fdec9e66f0e27ceb8759"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "zlib@1.2.11-r3"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "alpine"
+        },
+        {
+          "name": "aquasecurity:trivy:SrcName",
+          "value": "zlib"
+        },
+        {
+          "name": "aquasecurity:trivy:SrcVersion",
+          "value": "1.2.11-r3"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:golang/github.com/gin-contrib/sse@v0.1.0",
+      "type": "library",
+      "name": "github.com/gin-contrib/sse",
+      "version": "v0.1.0",
+      "purl": "pkg:golang/github.com/gin-contrib/sse@v0.1.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:99b499604ffc766b14603c196d6fb93e414fd143df5dc0666d5c30e54d61af23"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "github.com/gin-contrib/sse@v0.1.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:golang/github.com/gin-gonic/gin@v1.7.0",
+      "type": "library",
+      "name": "github.com/gin-gonic/gin",
+      "version": "v1.7.0",
+      "purl": "pkg:golang/github.com/gin-gonic/gin@v1.7.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:99b499604ffc766b14603c196d6fb93e414fd143df5dc0666d5c30e54d61af23"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "github.com/gin-gonic/gin@v1.7.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:golang/github.com/go-playground/locales@v0.13.0",
+      "type": "library",
+      "name": "github.com/go-playground/locales",
+      "version": "v0.13.0",
+      "purl": "pkg:golang/github.com/go-playground/locales@v0.13.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:99b499604ffc766b14603c196d6fb93e414fd143df5dc0666d5c30e54d61af23"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "github.com/go-playground/locales@v0.13.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:golang/github.com/go-playground/universal-translator@v0.17.0",
+      "type": "library",
+      "name": "github.com/go-playground/universal-translator",
+      "version": "v0.17.0",
+      "purl": "pkg:golang/github.com/go-playground/universal-translator@v0.17.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:99b499604ffc766b14603c196d6fb93e414fd143df5dc0666d5c30e54d61af23"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "github.com/go-playground/universal-translator@v0.17.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:golang/github.com/go-playground/validator/v10@v10.4.1",
+      "type": "library",
+      "name": "github.com/go-playground/validator/v10",
+      "version": "v10.4.1",
+      "purl": "pkg:golang/github.com/go-playground/validator/v10@v10.4.1",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:99b499604ffc766b14603c196d6fb93e414fd143df5dc0666d5c30e54d61af23"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "github.com/go-playground/validator/v10@v10.4.1"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:golang/github.com/golang/protobuf@v1.3.3",
+      "type": "library",
+      "name": "github.com/golang/protobuf",
+      "version": "v1.3.3",
+      "purl": "pkg:golang/github.com/golang/protobuf@v1.3.3",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:99b499604ffc766b14603c196d6fb93e414fd143df5dc0666d5c30e54d61af23"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "github.com/golang/protobuf@v1.3.3"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:golang/github.com/leodido/go-urn@v1.2.0",
+      "type": "library",
+      "name": "github.com/leodido/go-urn",
+      "version": "v1.2.0",
+      "purl": "pkg:golang/github.com/leodido/go-urn@v1.2.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:99b499604ffc766b14603c196d6fb93e414fd143df5dc0666d5c30e54d61af23"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "github.com/leodido/go-urn@v1.2.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:golang/github.com/mattn/go-isatty@v0.0.12",
+      "type": "library",
+      "name": "github.com/mattn/go-isatty",
+      "version": "v0.0.12",
+      "purl": "pkg:golang/github.com/mattn/go-isatty@v0.0.12",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:99b499604ffc766b14603c196d6fb93e414fd143df5dc0666d5c30e54d61af23"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "github.com/mattn/go-isatty@v0.0.12"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:golang/github.com/ugorji/go/codec@v1.1.7",
+      "type": "library",
+      "name": "github.com/ugorji/go/codec",
+      "version": "v1.1.7",
+      "purl": "pkg:golang/github.com/ugorji/go/codec@v1.1.7",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:99b499604ffc766b14603c196d6fb93e414fd143df5dc0666d5c30e54d61af23"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "github.com/ugorji/go/codec@v1.1.7"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:golang/golang.org/x/crypto@v0.0.0-20200622213623-75b288015ac9",
+      "type": "library",
+      "name": "golang.org/x/crypto",
+      "version": "v0.0.0-20200622213623-75b288015ac9",
+      "purl": "pkg:golang/golang.org/x/crypto@v0.0.0-20200622213623-75b288015ac9",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:99b499604ffc766b14603c196d6fb93e414fd143df5dc0666d5c30e54d61af23"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "golang.org/x/crypto@v0.0.0-20200622213623-75b288015ac9"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:golang/golang.org/x/sys@v0.0.0-20200116001909-b77594299b42",
+      "type": "library",
+      "name": "golang.org/x/sys",
+      "version": "v0.0.0-20200116001909-b77594299b42",
+      "purl": "pkg:golang/golang.org/x/sys@v0.0.0-20200116001909-b77594299b42",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:99b499604ffc766b14603c196d6fb93e414fd143df5dc0666d5c30e54d61af23"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "golang.org/x/sys@v0.0.0-20200116001909-b77594299b42"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:golang/gopkg.in/yaml.v2@v2.2.8",
+      "type": "library",
+      "name": "gopkg.in/yaml.v2",
+      "version": "v2.2.8",
+      "purl": "pkg:golang/gopkg.in/yaml.v2@v2.2.8",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:99b499604ffc766b14603c196d6fb93e414fd143df5dc0666d5c30e54d61af23"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "gopkg.in/yaml.v2@v2.2.8"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:golang/vulnerable-go-app",
+      "type": "library",
+      "name": "vulnerable-go-app",
+      "purl": "pkg:golang/vulnerable-go-app",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:99b499604ffc766b14603c196d6fb93e414fd143df5dc0666d5c30e54d61af23"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "vulnerable-go-app"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "gobinary"
+        }
+      ]
+    },
+    {
+      "bom-ref": "pkg:npm/%40golangtools/heapview@0.0.0",
+      "type": "library",
+      "group": "@golangtools",
+      "name": "heapview",
+      "version": "0.0.0",
+      "hashes": [
+        {
+          "alg": "SHA-1",
+          "content": "87b5e0bee9cace0dd688c1c5f617ab114ff17971"
+        }
+      ],
+      "purl": "pkg:npm/%40golangtools/heapview@0.0.0",
+      "properties": [
+        {
+          "name": "aquasecurity:trivy:FilePath",
+          "value": "go/pkg/mod/golang.org/x/tools@v0.0.0-20180917221912-90fa682c2a6e/cmd/heapview/client/package.json"
+        },
+        {
+          "name": "aquasecurity:trivy:LayerDiffID",
+          "value": "sha256:dcc67947cedd3e9f5bbc9b6c325ee5bc5f960c91d2baa5fa50ba0312d789f420"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgID",
+          "value": "@golangtools/heapview@0.0.0"
+        },
+        {
+          "name": "aquasecurity:trivy:PkgType",
+          "value": "node-pkg"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "030b649f-bc17-43ff-9bca-f619e54daf07",
+      "dependsOn": []
+    },
+    {
+      "ref": "0fc9978d-7c8e-4cb2-86d6-f40e8d8ba0e7",
+      "dependsOn": []
+    },
+    {
+      "ref": "157cac05-c2ab-4b51-b97e-a8d481aa38ea",
+      "dependsOn": [
+        "d45e8247-a4ef-4d44-8a7d-07fa75d537c4"
+      ]
+    },
+    {
+      "ref": "1ca3814a-98f6-42da-8e66-dbcb6704a3b2",
+      "dependsOn": []
+    },
+    {
+      "ref": "23ebdf20-53ae-4ca3-9cbf-d2961bd3eec7",
+      "dependsOn": []
+    },
+    {
+      "ref": "2d888ad7-6eab-450e-a88e-5e788172b41b",
+      "dependsOn": [
+        "344d34fa-634b-48b6-9601-d085dba873a1"
+      ]
+    },
+    {
+      "ref": "338cf632-b83a-43ca-a8c7-11ed85f9d107",
+      "dependsOn": [
+        "030b649f-bc17-43ff-9bca-f619e54daf07"
+      ]
+    },
+    {
+      "ref": "344d34fa-634b-48b6-9601-d085dba873a1",
+      "dependsOn": []
+    },
+    {
+      "ref": "3555398d-96af-42a5-8573-10fdeae782b6",
+      "dependsOn": [
+        "35ea83db-dca0-46c3-b5c0-03eea0298cda"
+      ]
+    },
+    {
+      "ref": "35ea83db-dca0-46c3-b5c0-03eea0298cda",
+      "dependsOn": []
+    },
+    {
+      "ref": "36d8794a-44e7-4225-bca8-743d1211d8c7",
+      "dependsOn": [
+        "58682cc6-999a-420f-ad48-4c058a57b232"
+      ]
+    },
+    {
+      "ref": "3efbe373-6699-40c3-9f4f-1728da3fbcf0",
+      "dependsOn": []
+    },
+    {
+      "ref": "3f5311b2-d27e-47c6-bf00-40c15e88e1c7",
+      "dependsOn": [
+        "d2039826-3fc6-4836-bb7e-1f4c3fa3e1d2"
+      ]
+    },
+    {
+      "ref": "3f63492b-cfb2-4a3c-83eb-74e63639f173",
+      "dependsOn": [
+        "7bffeac4-e15a-423f-994e-7c35ef9f814a"
+      ]
+    },
+    {
+      "ref": "429f44b6-0fb7-40a7-ae61-c10d7a1ea458",
+      "dependsOn": [
+        "23ebdf20-53ae-4ca3-9cbf-d2961bd3eec7"
+      ]
+    },
+    {
+      "ref": "50a58aed-0413-4e0f-9171-124ecbc0d18e",
+      "dependsOn": [
+        "1ca3814a-98f6-42da-8e66-dbcb6704a3b2"
+      ]
+    },
+    {
+      "ref": "54f603d3-154a-4730-898e-152e222fba96",
+      "dependsOn": [
+        "3efbe373-6699-40c3-9f4f-1728da3fbcf0"
+      ]
+    },
+    {
+      "ref": "58682cc6-999a-420f-ad48-4c058a57b232",
+      "dependsOn": []
+    },
+    {
+      "ref": "62366c07-996e-43f9-a800-3c6e3d0536f5",
+      "dependsOn": []
+    },
+    {
+      "ref": "65980bc6-35ff-4525-ba84-21c283c84b4f",
+      "dependsOn": [
+        "pkg:apk/alpine/alpine-baselayout@3.2.0-r18?arch=x86_64&distro=3.15.0",
+        "pkg:apk/alpine/alpine-keys@2.4-r1?arch=x86_64&distro=3.15.0",
+        "pkg:apk/alpine/apk-tools@2.12.7-r3?arch=x86_64&distro=3.15.0",
+        "pkg:apk/alpine/ca-certificates@20191127-r7?arch=x86_64&distro=3.15.0",
+        "pkg:apk/alpine/libc-utils@0.7.2-r3?arch=x86_64&distro=3.15.0",
+        "pkg:apk/alpine/ssl_client@1.34.1-r3?arch=x86_64&distro=3.15.0"
+      ]
+    },
+    {
+      "ref": "76449d33-83db-476a-8ec6-fd4975c7aa9c",
+      "dependsOn": []
+    },
+    {
+      "ref": "7a7cc6ae-8004-44c0-ba86-c455e970d9ea",
+      "dependsOn": [
+        "f2b724d3-0133-47bf-824c-bfa0415e4eff"
+      ]
+    },
+    {
+      "ref": "7bffeac4-e15a-423f-994e-7c35ef9f814a",
+      "dependsOn": []
+    },
+    {
+      "ref": "83994ddb-93c1-4fe2-9548-7fc0809553c4",
+      "dependsOn": [
+        "bd5d0a23-465d-4c8e-8b57-1006e23e98e5"
+      ]
+    },
+    {
+      "ref": "89939b3c-db8f-47a8-848d-3a5cf22b2b83",
+      "dependsOn": [
+        "62366c07-996e-43f9-a800-3c6e3d0536f5"
+      ]
+    },
+    {
+      "ref": "8b9b406c-8acf-4bb9-bf39-80213464c32f",
+      "dependsOn": []
+    },
+    {
+      "ref": "8bdfac7e-acc7-4876-90f8-f807f52827d2",
+      "dependsOn": []
+    },
+    {
+      "ref": "8df69625-3b16-4c50-a446-a31bad702671",
+      "dependsOn": [
+        "8bdfac7e-acc7-4876-90f8-f807f52827d2"
+      ]
+    },
+    {
+      "ref": "8eed344b-b344-4783-a2a2-0dd292aa76d3",
+      "dependsOn": []
+    },
+    {
+      "ref": "91a4966d-2433-4080-9b2c-5e1fee510147",
+      "dependsOn": [
+        "157cac05-c2ab-4b51-b97e-a8d481aa38ea",
+        "2d888ad7-6eab-450e-a88e-5e788172b41b",
+        "338cf632-b83a-43ca-a8c7-11ed85f9d107",
+        "3555398d-96af-42a5-8573-10fdeae782b6",
+        "36d8794a-44e7-4225-bca8-743d1211d8c7",
+        "3f5311b2-d27e-47c6-bf00-40c15e88e1c7",
+        "3f63492b-cfb2-4a3c-83eb-74e63639f173",
+        "429f44b6-0fb7-40a7-ae61-c10d7a1ea458",
+        "50a58aed-0413-4e0f-9171-124ecbc0d18e",
+        "54f603d3-154a-4730-898e-152e222fba96",
+        "65980bc6-35ff-4525-ba84-21c283c84b4f",
+        "7a7cc6ae-8004-44c0-ba86-c455e970d9ea",
+        "83994ddb-93c1-4fe2-9548-7fc0809553c4",
+        "89939b3c-db8f-47a8-848d-3a5cf22b2b83",
+        "8df69625-3b16-4c50-a446-a31bad702671",
+        "a346894a-1b25-421c-baa8-c060c9e37569",
+        "a64030d4-b6a4-45d3-8f7d-76312542e770",
+        "af3a74b7-6c79-4c15-8e4f-975f10edf5ce",
+        "c36f79f0-0ef5-405d-a18c-9864a3a8f82a",
+        "ddaf7bbd-18db-402f-9033-174b34c4169a",
+        "de569399-98e4-43dc-a3d5-395b7fbfdf51",
+        "pkg:npm/%40golangtools/heapview@0.0.0"
+      ]
+    },
+    {
+      "ref": "a346894a-1b25-421c-baa8-c060c9e37569",
+      "dependsOn": [
+        "e4157dd2-83ae-42a5-a089-98dfbb1e347f"
+      ]
+    },
+    {
+      "ref": "a64030d4-b6a4-45d3-8f7d-76312542e770",
+      "dependsOn": [
+        "76449d33-83db-476a-8ec6-fd4975c7aa9c"
+      ]
+    },
+    {
+      "ref": "af3a74b7-6c79-4c15-8e4f-975f10edf5ce",
+      "dependsOn": [
+        "8eed344b-b344-4783-a2a2-0dd292aa76d3"
+      ]
+    },
+    {
+      "ref": "bd5d0a23-465d-4c8e-8b57-1006e23e98e5",
+      "dependsOn": []
+    },
+    {
+      "ref": "c36f79f0-0ef5-405d-a18c-9864a3a8f82a",
+      "dependsOn": [
+        "pkg:golang/vulnerable-go-app"
+      ]
+    },
+    {
+      "ref": "d2039826-3fc6-4836-bb7e-1f4c3fa3e1d2",
+      "dependsOn": []
+    },
+    {
+      "ref": "d45e8247-a4ef-4d44-8a7d-07fa75d537c4",
+      "dependsOn": []
+    },
+    {
+      "ref": "ddaf7bbd-18db-402f-9033-174b34c4169a",
+      "dependsOn": [
+        "0fc9978d-7c8e-4cb2-86d6-f40e8d8ba0e7"
+      ]
+    },
+    {
+      "ref": "de569399-98e4-43dc-a3d5-395b7fbfdf51",
+      "dependsOn": [
+        "8b9b406c-8acf-4bb9-bf39-80213464c32f"
+      ]
+    },
+    {
+      "ref": "e4157dd2-83ae-42a5-a089-98dfbb1e347f",
+      "dependsOn": []
+    },
+    {
+      "ref": "e63bd09f-e7d5-4f22-8d46-cee66eda145e",
+      "dependsOn": []
+    },
+    {
+      "ref": "f2b724d3-0133-47bf-824c-bfa0415e4eff",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:apk/alpine/alpine-baselayout@3.2.0-r18?arch=x86_64&distro=3.15.0",
+      "dependsOn": [
+        "pkg:apk/alpine/busybox@1.34.1-r3?arch=x86_64&distro=3.15.0",
+        "pkg:apk/alpine/musl@1.2.2-r7?arch=x86_64&distro=3.15.0"
+      ]
+    },
+    {
+      "ref": "pkg:apk/alpine/alpine-keys@2.4-r1?arch=x86_64&distro=3.15.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:apk/alpine/apk-tools@2.12.7-r3?arch=x86_64&distro=3.15.0",
+      "dependsOn": [
+        "pkg:apk/alpine/ca-certificates-bundle@20191127-r7?arch=x86_64&distro=3.15.0",
+        "pkg:apk/alpine/libcrypto1.1@1.1.1l-r7?arch=x86_64&distro=3.15.0",
+        "pkg:apk/alpine/libssl1.1@1.1.1l-r7?arch=x86_64&distro=3.15.0",
+        "pkg:apk/alpine/musl@1.2.2-r7?arch=x86_64&distro=3.15.0",
+        "pkg:apk/alpine/zlib@1.2.11-r3?arch=x86_64&distro=3.15.0"
+      ]
+    },
+    {
+      "ref": "pkg:apk/alpine/busybox@1.34.1-r3?arch=x86_64&distro=3.15.0",
+      "dependsOn": [
+        "pkg:apk/alpine/musl@1.2.2-r7?arch=x86_64&distro=3.15.0"
+      ]
+    },
+    {
+      "ref": "pkg:apk/alpine/ca-certificates-bundle@20191127-r7?arch=x86_64&distro=3.15.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:apk/alpine/ca-certificates@20191127-r7?arch=x86_64&distro=3.15.0",
+      "dependsOn": [
+        "pkg:apk/alpine/busybox@1.34.1-r3?arch=x86_64&distro=3.15.0",
+        "pkg:apk/alpine/libcrypto1.1@1.1.1l-r7?arch=x86_64&distro=3.15.0",
+        "pkg:apk/alpine/musl@1.2.2-r7?arch=x86_64&distro=3.15.0"
+      ]
+    },
+    {
+      "ref": "pkg:apk/alpine/libc-utils@0.7.2-r3?arch=x86_64&distro=3.15.0",
+      "dependsOn": [
+        "pkg:apk/alpine/musl-utils@1.2.2-r7?arch=x86_64&distro=3.15.0"
+      ]
+    },
+    {
+      "ref": "pkg:apk/alpine/libcrypto1.1@1.1.1l-r7?arch=x86_64&distro=3.15.0",
+      "dependsOn": [
+        "pkg:apk/alpine/musl@1.2.2-r7?arch=x86_64&distro=3.15.0"
+      ]
+    },
+    {
+      "ref": "pkg:apk/alpine/libretls@3.3.4-r2?arch=x86_64&distro=3.15.0",
+      "dependsOn": [
+        "pkg:apk/alpine/ca-certificates-bundle@20191127-r7?arch=x86_64&distro=3.15.0",
+        "pkg:apk/alpine/libcrypto1.1@1.1.1l-r7?arch=x86_64&distro=3.15.0",
+        "pkg:apk/alpine/libssl1.1@1.1.1l-r7?arch=x86_64&distro=3.15.0",
+        "pkg:apk/alpine/musl@1.2.2-r7?arch=x86_64&distro=3.15.0"
+      ]
+    },
+    {
+      "ref": "pkg:apk/alpine/libssl1.1@1.1.1l-r7?arch=x86_64&distro=3.15.0",
+      "dependsOn": [
+        "pkg:apk/alpine/libcrypto1.1@1.1.1l-r7?arch=x86_64&distro=3.15.0",
+        "pkg:apk/alpine/musl@1.2.2-r7?arch=x86_64&distro=3.15.0"
+      ]
+    },
+    {
+      "ref": "pkg:apk/alpine/musl-utils@1.2.2-r7?arch=x86_64&distro=3.15.0",
+      "dependsOn": [
+        "pkg:apk/alpine/musl@1.2.2-r7?arch=x86_64&distro=3.15.0",
+        "pkg:apk/alpine/scanelf@1.3.3-r0?arch=x86_64&distro=3.15.0"
+      ]
+    },
+    {
+      "ref": "pkg:apk/alpine/musl@1.2.2-r7?arch=x86_64&distro=3.15.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:apk/alpine/scanelf@1.3.3-r0?arch=x86_64&distro=3.15.0",
+      "dependsOn": [
+        "pkg:apk/alpine/musl@1.2.2-r7?arch=x86_64&distro=3.15.0"
+      ]
+    },
+    {
+      "ref": "pkg:apk/alpine/ssl_client@1.34.1-r3?arch=x86_64&distro=3.15.0",
+      "dependsOn": [
+        "pkg:apk/alpine/libretls@3.3.4-r2?arch=x86_64&distro=3.15.0",
+        "pkg:apk/alpine/musl@1.2.2-r7?arch=x86_64&distro=3.15.0"
+      ]
+    },
+    {
+      "ref": "pkg:apk/alpine/zlib@1.2.11-r3?arch=x86_64&distro=3.15.0",
+      "dependsOn": [
+        "pkg:apk/alpine/musl@1.2.2-r7?arch=x86_64&distro=3.15.0"
+      ]
+    },
+    {
+      "ref": "pkg:golang/github.com/gin-contrib/sse@v0.1.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/github.com/gin-gonic/gin@v1.7.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/github.com/go-playground/locales@v0.13.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/github.com/go-playground/universal-translator@v0.17.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/github.com/go-playground/validator/v10@v10.4.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/github.com/golang/protobuf@v1.3.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/github.com/leodido/go-urn@v1.2.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/github.com/mattn/go-isatty@v0.0.12",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/github.com/ugorji/go/codec@v1.1.7",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/golang.org/x/crypto@v0.0.0-20200622213623-75b288015ac9",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/golang.org/x/sys@v0.0.0-20200116001909-b77594299b42",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/gopkg.in/yaml.v2@v2.2.8",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:golang/vulnerable-go-app",
+      "dependsOn": [
+        "e63bd09f-e7d5-4f22-8d46-cee66eda145e",
+        "pkg:golang/github.com/gin-contrib/sse@v0.1.0",
+        "pkg:golang/github.com/gin-gonic/gin@v1.7.0",
+        "pkg:golang/github.com/go-playground/locales@v0.13.0",
+        "pkg:golang/github.com/go-playground/universal-translator@v0.17.0",
+        "pkg:golang/github.com/go-playground/validator/v10@v10.4.1",
+        "pkg:golang/github.com/golang/protobuf@v1.3.3",
+        "pkg:golang/github.com/leodido/go-urn@v1.2.0",
+        "pkg:golang/github.com/mattn/go-isatty@v0.0.12",
+        "pkg:golang/github.com/ugorji/go/codec@v1.1.7",
+        "pkg:golang/golang.org/x/crypto@v0.0.0-20200622213623-75b288015ac9",
+        "pkg:golang/golang.org/x/sys@v0.0.0-20200116001909-b77594299b42",
+        "pkg:golang/gopkg.in/yaml.v2@v2.2.8"
+      ]
+    },
+    {
+      "ref": "pkg:npm/%40golangtools/heapview@0.0.0",
+      "dependsOn": []
+    }
+  ],
+  "vulnerabilities": []
+}

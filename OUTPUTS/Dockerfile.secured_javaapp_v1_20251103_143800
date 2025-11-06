@@ -1,0 +1,51 @@
+FROM openjdk:17.0.11-jdk-slim-bullseye AS base
+
+# ------------------------------------------------------------
+# 1️⃣ Install OS packages (ROOT) – upgrade only vulnerable ones
+# ------------------------------------------------------------
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+        dpkg=1.20.10 \
+        e2fsprogs=1.46.2-2+deb11u1 \
+        gzip=1.10-4+deb11u1 \
+        libc-bin=2.31-13+deb11u13 \
+        libc6=2.31-13+deb11u13 && \
+    rm -rf /var/lib/apt/lists/*
+
+# ------------------------------------------------------------
+# 2️⃣ Create non‑root user (before copying files)
+# ------------------------------------------------------------
+RUN addgroup --gid 10001 appuser && \
+    adduser --uid 10001 --gid 10001 --disabled-password --gecos "" appuser
+
+# ------------------------------------------------------------
+# 3️⃣ Set working directory
+# ------------------------------------------------------------
+WORKDIR /app
+
+# ------------------------------------------------------------
+# 4️⃣ Copy application artefacts with correct ownership
+# ------------------------------------------------------------
+COPY --chown=appuser:appuser . /app
+
+# ------------------------------------------------------------
+# 5️⃣ Switch to non‑root user
+# ------------------------------------------------------------
+USER appuser
+
+# ------------------------------------------------------------
+# 6️⃣ Expose application port (standard Java web port)
+# ------------------------------------------------------------
+EXPOSE 8080
+
+# ------------------------------------------------------------
+# 7️⃣ Optional health‑check (adjust path if needed)
+# ------------------------------------------------------------
+HEALTHCHECK --interval=30s --timeout=5s --start-period=5s \
+  CMD curl -f http://localhost:8080/health || exit 1
+
+# ------------------------------------------------------------
+# 8️⃣ Entrypoint – run the compiled JAR
+# ------------------------------------------------------------
+# Adjust the JAR name if your artifact differs
+ENTRYPOINT ["java","-jar","app.jar"]

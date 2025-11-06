@@ -1,0 +1,54 @@
+FROM openjdk:17.0.11-jdk-slim-bullseye AS base
+
+# ------------------------------------------------------------
+# 1️⃣ Install OS packages (ROOT) – upgrade only vulnerable ones
+# ------------------------------------------------------------
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+        dpkg=1.20.10 \
+        e2fsprogs=1.46.2-2+deb11u1 \
+        gzip=1.10-4+deb11u1 \
+        libc-bin=2.31-13+deb11u13 \
+        libc6=2.31-13+deb11u13 && \
+    rm -rf /var/lib/apt/lists/*
+
+# ------------------------------------------------------------
+# 2️⃣ Create non‑root user (UID > 10 000)
+# ------------------------------------------------------------
+RUN groupadd -g 10001 appgroup && \
+    useradd -u 10001 -g appgroup -m -s /bin/bash appuser
+
+# ------------------------------------------------------------
+# 3️⃣ Set working directory
+# ------------------------------------------------------------
+WORKDIR /app
+
+# ------------------------------------------------------------
+# 4️⃣ Copy application artefacts with correct ownership
+# ------------------------------------------------------------
+COPY --chown=appuser:appgroup . /app
+
+# ------------------------------------------------------------
+# 5️⃣ Switch to non‑root user
+# ------------------------------------------------------------
+USER appuser
+
+# ------------------------------------------------------------
+# 6️⃣ (No runtime language package manager needed for compiled .class files)
+
+# ------------------------------------------------------------
+# 7️⃣ Expose application port (observed 8080)
+# ------------------------------------------------------------
+EXPOSE 8080
+
+# ------------------------------------------------------------
+# 8️⃣ Healthcheck (simple HTTP probe)
+# ------------------------------------------------------------
+HEALTHCHECK --interval=30s --timeout=5s --start-period=5s \
+  CMD curl -f http://localhost:8080/health || exit 1
+
+# ------------------------------------------------------------
+# 9️⃣ Entrypoint / CMD – adjust if your main class differs
+# ------------------------------------------------------------
+# Replace `Main` with the actual fully‑qualified class name if needed.
+ENTRYPOINT ["java", "-cp", "/app", "Main"]

@@ -1,0 +1,46 @@
+apps/v1/Deployment go-app-deployment in default                               💥
+    path=C:\Users\devku\OneDrive\Documents\NOKIA PROJECT FINAL\outputs\temp_cluster_manifests\Deployment_go-app-deployment_default.yaml
+    [CRITICAL] Container Security Context User Group ID
+        · go-app -> The container is running with a low user ID
+            A userid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsUser to a value > 10000
+        · go-app -> The container running with a low group ID
+            A groupid above 10 000 is recommended to avoid conflicts with the
+            host. Set securityContext.runAsGroup to a value > 10000
+    [CRITICAL] Container Security Context Privileged
+        · go-app -> The container is privileged
+            Set securityContext.privileged to false. Privileged containers can
+            access all devices on the host, and grants almost the same access as
+            non-containerized processes on the host.
+    [CRITICAL] Container Ephemeral Storage Request and Limit
+        · go-app -> Ephemeral Storage limit is not set
+            Resource limits are recommended to avoid resource DDOS. Set
+            resources.limits.ephemeral-storage
+        · go-app -> Ephemeral Storage request is not set
+            Resource requests are recommended to make sure the application can
+            start and run without crashing. Set
+            resource.requests.ephemeral-storage
+    [CRITICAL] Pod NetworkPolicy
+        · The pod does not have a matching NetworkPolicy
+            Create a NetworkPolicy that targets this pod to control who/what
+            can communicate with this pod. Note, this feature needs to be
+            supported by the CNI implementation used in the Kubernetes cluster
+            to have an effect.
+    [CRITICAL] Container Image Pull Policy
+        · go-app -> ImagePullPolicy is not set to Always
+            It's recommended to always set the ImagePullPolicy to Always, to
+            make sure that the imagePullSecrets are always correct, and to
+            always get the image you want.
+    [CRITICAL] Container Security Context ReadOnlyRootFilesystem
+        · go-app -> The pod has a container with a writable root filesystem
+            Set securityContext.readOnlyRootFilesystem to true
+    [CRITICAL] Deployment has PodDisruptionBudget
+        · No matching PodDisruptionBudget was found
+            It's recommended to define a PodDisruptionBudget to avoid
+            unexpected downtime during Kubernetes maintenance operations, such
+            as when draining a node.
+    [WARNING] Deployment has host PodAntiAffinity
+        · Deployment does not have a host podAntiAffinity set
+            It's recommended to set a podAntiAffinity that stops multiple pods
+            from a deployment from being scheduled on the same node. This
+            increases availability in case the node becomes unavailable.

@@ -1,0 +1,9 @@
+apps/v1/Deployment go-app-deployment in default                               💥
+    path=C:\Users\devku\OneDrive\Documents\NOKIA PROJECT FINAL\outputs\safer_manifests\Deployment_go-app-deployment_default_improved_20251103_094335.yaml
+    [CRITICAL] Pod Probes Identical
+        · Container has the same readiness and liveness probe
+            Using the same probe for liveness and readiness is very likely
+            dangerous. It's generally better to avoid re-using the same probe.
+            More information: https://github.com/zegl/kube-score/blob/master/README_PROBES.md
+networking.k8s.io/v1/NetworkPolicy go-app-networkpolicy in default            ✅
+policy/v1/PodDisruptionBudget go-app-pdb in default                           ✅
