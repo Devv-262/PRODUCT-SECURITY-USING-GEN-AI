@@ -1,0 +1,47 @@
+# Core dependencies for Universal Container Security Pipeline
+# Python 3.8+ required
+
+# Vector Database & Embeddings
+chromadb==0.4.22
+sentence-transformers==2.3.1
+
+# HTTP Requests & API Communication
+requests==2.31.0
+urllib3==2.1.0
+
+# YAML Processing
+PyYAML==6.0.1
+
+# Data Processing
+packaging==23.2
+
+# Logging (built-in, but explicit for clarity)
+# logging - standard library
+
+# Optional: Enhanced CLI experience
+colorama==0.4.6
+
+# Optional: Progress bars for long operations
+tqdm==4.66.1
+
+# Optional: Better JSON handling
+ujson==5.9.0
+
+# Development Dependencies (uncomment if needed)
+# pytest==7.4.4
+# pytest-cov==4.1.0
+# black==24.1.1
+# flake8==7.0.0
+# mypy==1.8.0
+
+# Note: External tools required (install separately):
+# - Docker: https://docs.docker.com/get-docker/
+# - Trivy: https://aquasecurity.github.io/trivy/
+# - kubectl: https://kubernetes.io/docs/tasks/tools/
+# - kube-score: https://github.com/zegl/kube-score
+# - kubescape: https://github.com/kubescape/kubescape
+# - kyverno CLI: https://kyverno.io/docs/kyverno-cli/
+
+# API Key Configuration:
+# Create API_KEY.txt in project root with your Groq or Llama API key
+# Or set LLAMA_API_KEY environment variable

@@ -1,0 +1,1302 @@
+2025-11-03 08:17:15,648 - INFO - Security pipeline initialized. Output: outputs
+2025-11-03 09:41:30,804 - INFO - Security pipeline initialized. Output: outputs
+2025-11-03 09:42:22,064 - INFO - PodSecurityAnalyzer initialized
+2025-11-03 09:42:54,453 - INFO - Setting up RAG system with ChromaDB...
+2025-11-03 09:42:54,619 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-11-03 09:42:56,725 - INFO - Created new security_scans collection
+2025-11-03 09:42:56,725 - INFO - RAG system ready
+2025-11-03 09:42:56,728 - INFO - 🔄 Extracting 1 manifests from cluster...
+2025-11-03 09:42:56,728 - INFO -   Extracting Deployment/go-app-deployment from default...
+2025-11-03 09:42:57,118 - INFO -     ✅ Saved to Deployment_go-app-deployment_default.yaml
+2025-11-03 09:42:57,118 - INFO - ✅ Extracted 1 manifests from cluster
+2025-11-03 09:42:57,119 - INFO - 🚀 Starting Kubernetes security pipeline...
+2025-11-03 09:42:57,120 - INFO - 📋 Files to scan: 1
+2025-11-03 09:42:57,120 - INFO -    1. Deployment_go-app-deployment_default.yaml
+2025-11-03 09:42:57,122 - INFO - ✅ Validated 1 file(s)
+2025-11-03 09:42:57,122 - INFO - 📋 Generating remediation for 1 file(s)...
+2025-11-03 09:42:57,122 - INFO - 📋 Scanning Deployment_go-app-deployment_default.yaml...
+2025-11-03 09:42:57,170 - INFO - 🔍 Running kube-score on Deployment_go-app-deployment_default.yaml...
+2025-11-03 09:43:00,235 - INFO - ✅ kube-score output saved: outputs\scans\kubernetes_scans\kubescore_Deployment_go-app-deployment_default_20251103_094257.txt
+2025-11-03 09:43:00,237 - INFO - 🔍 Running kubescape on Deployment_go-app-deployment_default.yaml...
+2025-11-03 09:43:16,830 - INFO - ✅ kubescape output saved: outputs\scans\kubernetes_scans\kubescape_Deployment_go-app-deployment_default_20251103_094300.json
+2025-11-03 09:43:16,831 - INFO - 🔍 Running kyverno on Deployment_go-app-deployment_default.yaml...
+2025-11-03 09:43:16,835 - WARNING - Error: kyverno CLI not found. Install from https://github.com/kyverno/kyverno/releases
+2025-11-03 09:43:16,837 - INFO -    ✅ Found 218 issues
+2025-11-03 09:43:16,838 - INFO - 💾 Indexing scan data for RAG...
+2025-11-03 09:43:23,861 - INFO - ✅ Indexed 34 scan document chunks
+2025-11-03 09:43:23,883 - INFO - API key loaded from API_KEY.txt
+2025-11-03 09:43:23,883 - INFO - LLM client initialized (provider=groq, model=openai/gpt-oss-120b)
+2025-11-03 09:43:23,941 - INFO - ✅ Loaded external prompt from: prompt_pod_security.txt (12897 chars)
+2025-11-03 09:43:23,944 - INFO - ✅ Using external prompt from prompt_pod_security.txt
+2025-11-03 09:43:23,958 - INFO - 📊 Context size: 22,161 characters
+2025-11-03 09:43:23,958 - INFO - 📊 Prompt size: 12,897 characters
+2025-11-03 09:43:23,960 - INFO - 📊 Scan context size: 9,264 characters
+2025-11-03 09:43:23,962 - INFO - 🤖 Querying LLM for remediation...
+2025-11-03 09:43:23,962 - INFO - 📊 LLM Query Details:
+2025-11-03 09:43:23,962 - INFO -    Model: openai/gpt-oss-120b
+2025-11-03 09:43:23,964 - INFO -    Provider: groq
+2025-11-03 09:43:23,964 - INFO -    Prompt size: 12,897 characters
+2025-11-03 09:43:23,966 - INFO -    Context size: 9,264 characters
+2025-11-03 09:43:23,966 - INFO -    Total input: 22,172 characters
+2025-11-03 09:43:23,966 - INFO -    Max tokens: 16,000
+2025-11-03 09:43:23,966 - INFO -    Estimated input tokens: ~5,543
+2025-11-03 09:43:23,966 - INFO - 🔧 Using GPT-OSS-120B optimized settings...
+2025-11-03 09:43:23,968 - INFO - 🚀 Sending request to groq API (openai/gpt-oss-120b)...
+2025-11-03 09:43:35,027 - INFO - ✅ Response received in 11.06 seconds
+2025-11-03 09:43:35,030 - INFO - 📊 Response size: 7,587 characters
+2025-11-03 09:43:35,030 - INFO - 📊 Token usage:
+2025-11-03 09:43:35,030 - INFO -    Prompt tokens: 5,037
+2025-11-03 09:43:35,030 - INFO -    Completion tokens: 3,225
+2025-11-03 09:43:35,032 - INFO -    Total tokens: 8,262
+2025-11-03 09:43:35,033 - INFO - 🔒 217 critical issues found, extracting improved manifests...
+2025-11-03 09:43:35,033 - INFO - 📦 Found 1 YAML blocks in response
+2025-11-03 09:43:35,078 - INFO - ✅ Saved improved manifest: outputs\safer_manifests\Deployment_go-app-deployment_default_improved_20251103_094335.yaml
+2025-11-03 09:43:35,084 - INFO - 🔄 Rescanning improved manifests...
+2025-11-03 09:43:35,085 - INFO - Scanning improved: Deployment_go-app-deployment_default.yaml
+2025-11-03 09:43:35,152 - INFO - 🔍 Running kube-score on Deployment_go-app-deployment_default_improved_20251103_094335.yaml...
+2025-11-03 09:43:35,391 - INFO - ✅ kube-score output saved: outputs\scans\kubernetes_scans\kubescore_Deployment_go-app-deployment_default_improved_20251103_094335_20251103_094335.txt
+2025-11-03 09:43:35,392 - INFO - 🔍 Running kubescape on Deployment_go-app-deployment_default_improved_20251103_094335.yaml...
+2025-11-03 09:43:46,854 - INFO - ✅ kubescape output saved: outputs\scans\kubernetes_scans\kubescape_Deployment_go-app-deployment_default_improved_20251103_094335_20251103_094335.json
+2025-11-03 09:43:46,855 - INFO - 🔍 Running kyverno on Deployment_go-app-deployment_default_improved_20251103_094335.yaml...
+2025-11-03 09:43:46,860 - WARNING - Error: kyverno CLI not found. Install from https://github.com/kyverno/kyverno/releases
+2025-11-03 09:43:46,861 - INFO -   ✅ Remaining issues: 142
+2025-11-03 09:43:46,869 - INFO - 📄 Report saved: outputs\pod_remediation\pod_remediation_report_20251103_094346.md
+2025-11-03 13:38:09,240 - INFO - Security pipeline initialized. Output: outputs
+2025-11-03 13:38:30,070 - INFO - Setting up RAG system with ChromaDB...
+2025-11-03 13:38:30,217 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-11-03 13:38:31,862 - INFO - Loaded existing security_scans collection
+2025-11-03 13:38:31,862 - INFO - RAG system ready
+2025-11-03 13:38:31,862 - INFO - Starting image security pipeline for: ruby-app:latest
+2025-11-03 13:38:32,976 - INFO - Starting Trivy scan for ruby-app:latest
+2025-11-03 13:40:12,678 - INFO - Security pipeline initialized. Output: outputs
+2025-11-03 13:40:23,513 - INFO - Setting up RAG system with ChromaDB...
+2025-11-03 13:40:23,597 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-11-03 13:40:23,754 - INFO - Loaded existing security_scans collection
+2025-11-03 13:40:23,754 - INFO - RAG system ready
+2025-11-03 13:40:23,754 - INFO - Starting image security pipeline for: javaapp:v1
+2025-11-03 13:40:24,117 - INFO - Starting Trivy scan for javaapp:v1
+2025-11-03 13:41:01,553 - INFO - Trivy scan completed successfully
+2025-11-03 13:41:01,555 - INFO - Indexing Trivy scan results into ChromaDB...
+2025-11-03 13:41:01,557 - INFO - Indexing trivy_txt from outputs\scans\trivy_scan_javaapp_v1_20251103_134023.txt (46,300 chars)
+2025-11-03 13:41:01,558 - INFO - Created 52 chunks from trivy_txt
+2025-11-03 13:41:01,559 - INFO - ✅ Successfully prepared 52 chunks from trivy_txt
+2025-11-03 13:41:01,561 - INFO - Indexing trivy_json from outputs\scans\trivy_scan_javaapp_v1_20251103_134023.json (350,842 chars)
+2025-11-03 13:41:01,563 - INFO - Created 369 chunks from trivy_json
+2025-11-03 13:41:01,566 - INFO - ✅ Successfully prepared 369 chunks from trivy_json
+2025-11-03 13:41:01,569 - INFO - Indexing sbom_cyclonedx from outputs\scans\sbom_cyclonedx_javaapp_v1_20251103_134023.json (177,917 chars)
+2025-11-03 13:41:01,570 - INFO - Created 183 chunks from sbom_cyclonedx
+2025-11-03 13:41:01,573 - INFO - ✅ Successfully prepared 183 chunks from sbom_cyclonedx
+2025-11-03 13:42:13,188 - INFO - ✅ Successfully indexed 604 document chunks for javaapp:v1
+2025-11-03 13:42:13,190 - INFO - Generating image remediation...
+2025-11-03 13:42:13,318 - WARNING - Could not detect image type: 'NoneType' object has no attribute 'items'
+2025-11-03 13:42:13,322 - INFO - Parsed 76 vulnerabilities from JSON
+2025-11-03 13:42:13,333 - WARNING - Could not fetch versions for bash in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:13,363 - WARNING - Could not fetch versions for dpkg in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:13,383 - WARNING - Could not fetch versions for e2fsprogs in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:13,395 - WARNING - Could not fetch versions for gzip in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:13,414 - WARNING - Could not fetch versions for libc-bin in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:13,421 - WARNING - Could not fetch versions for libc-bin in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:13,447 - WARNING - Could not fetch versions for libc-bin in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:13,467 - WARNING - Could not fetch versions for libc-bin in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:13,477 - WARNING - Could not fetch versions for libc-bin in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:13,504 - WARNING - Could not fetch versions for libc6 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:13,513 - WARNING - Could not fetch versions for libc6 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:13,525 - WARNING - Could not fetch versions for libc6 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:13,536 - WARNING - Could not fetch versions for libc6 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:13,552 - WARNING - Could not fetch versions for libc6 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:13,560 - WARNING - Could not fetch versions for libcom-err2 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:13,580 - WARNING - Could not fetch versions for libdb5.3 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:13,591 - WARNING - Could not fetch versions for libext2fs2 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:13,604 - WARNING - Could not fetch versions for libgcrypt20 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:13,625 - WARNING - Could not fetch versions for libgnutls30 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:13,663 - WARNING - Could not fetch versions for libgnutls30 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:13,684 - WARNING - Could not fetch versions for libgnutls30 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:13,699 - WARNING - Could not fetch versions for libgnutls30 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:13,711 - WARNING - Could not fetch versions for libgnutls30 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:13,738 - WARNING - Could not fetch versions for libgnutls30 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:13,760 - WARNING - Could not fetch versions for libgssapi-krb5-2 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:13,777 - WARNING - Could not fetch versions for libgssapi-krb5-2 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:13,820 - WARNING - Could not fetch versions for libgssapi-krb5-2 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:13,845 - WARNING - Could not fetch versions for libk5crypto3 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:13,907 - WARNING - Could not fetch versions for libk5crypto3 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:13,938 - WARNING - Could not fetch versions for libk5crypto3 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:13,961 - WARNING - Could not fetch versions for libkrb5-3 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:13,980 - WARNING - Could not fetch versions for libkrb5-3 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:14,006 - WARNING - Could not fetch versions for libkrb5-3 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:14,021 - WARNING - Could not fetch versions for libkrb5support0 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:14,043 - WARNING - Could not fetch versions for libkrb5support0 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:14,055 - WARNING - Could not fetch versions for libkrb5support0 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:14,066 - WARNING - Could not fetch versions for liblzma5 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:14,090 - WARNING - Could not fetch versions for libpam-modules in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:14,101 - WARNING - Could not fetch versions for libpam-modules-bin in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:14,113 - WARNING - Could not fetch versions for libpam-runtime in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:14,127 - WARNING - Could not fetch versions for libpam0g in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:14,132 - WARNING - Could not fetch versions for libpcre2-8-0 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:14,145 - WARNING - Could not fetch versions for libpcre2-8-0 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:14,159 - WARNING - Could not fetch versions for libss2 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:14,167 - WARNING - Could not fetch versions for libssl1.1 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:14,189 - WARNING - Could not fetch versions for libssl1.1 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:14,197 - WARNING - Could not fetch versions for libssl1.1 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:14,211 - WARNING - Could not fetch versions for libssl1.1 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:14,234 - WARNING - Could not fetch versions for libssl1.1 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:14,251 - WARNING - Could not fetch versions for libssl1.1 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:14,267 - WARNING - Could not fetch versions for libsystemd0 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:14,277 - WARNING - Could not fetch versions for libsystemd0 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:14,289 - WARNING - Could not fetch versions for libtasn1-6 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:14,323 - WARNING - Could not fetch versions for libtinfo6 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:14,347 - WARNING - Could not fetch versions for libtinfo6 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:14,371 - WARNING - Could not fetch versions for libtirpc-common in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:14,384 - WARNING - Could not fetch versions for libtirpc3 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:14,394 - WARNING - Could not fetch versions for libudev1 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:14,411 - WARNING - Could not fetch versions for libudev1 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:14,425 - WARNING - Could not fetch versions for libzstd1 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:14,441 - WARNING - Could not fetch versions for logsave in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:14,454 - WARNING - Could not fetch versions for ncurses-base in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:14,469 - WARNING - Could not fetch versions for ncurses-base in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:14,484 - WARNING - Could not fetch versions for ncurses-bin in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:14,502 - WARNING - Could not fetch versions for ncurses-bin in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:14,515 - WARNING - Could not fetch versions for openssl in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:14,525 - WARNING - Could not fetch versions for openssl in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:14,537 - WARNING - Could not fetch versions for openssl in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:14,550 - WARNING - Could not fetch versions for openssl in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:14,574 - WARNING - Could not fetch versions for openssl in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:14,585 - WARNING - Could not fetch versions for openssl in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:14,598 - WARNING - Could not fetch versions for perl-base in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:14,611 - WARNING - Could not fetch versions for perl-base in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:14,623 - WARNING - Could not fetch versions for perl-base in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:14,633 - WARNING - Could not fetch versions for zlib1g in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:14,644 - WARNING - Could not fetch versions for zlib1g in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 13:42:14,671 - INFO - API key loaded from API_KEY.txt
+2025-11-03 13:42:14,671 - INFO - LLM client initialized (provider=groq, model=openai/gpt-oss-120b)
+2025-11-03 13:42:20,825 - INFO - Retrieved 17 relevant documents from RAG
+2025-11-03 13:42:20,865 - INFO - ✅ Loaded external prompt from: prompt.txt (9645 chars)
+2025-11-03 13:42:20,992 - INFO - 📊 LLM Query Details:
+2025-11-03 13:42:20,993 - INFO -    Model: openai/gpt-oss-120b
+2025-11-03 13:42:20,993 - INFO -    Provider: groq
+2025-11-03 13:42:20,995 - INFO -    Prompt size: 13,057 characters
+2025-11-03 13:42:20,995 - INFO -    Context size: 4,613 characters
+2025-11-03 13:42:20,996 - INFO -    Total input: 17,681 characters
+2025-11-03 13:42:20,997 - INFO -    Max tokens: 8,000
+2025-11-03 13:42:20,998 - INFO -    Estimated input tokens: ~4,420
+2025-11-03 13:42:20,998 - INFO - 🔧 Using GPT-OSS-120B optimized settings...
+2025-11-03 13:42:20,999 - INFO - 🚀 Sending request to groq API (openai/gpt-oss-120b)...
+2025-11-03 13:42:28,335 - INFO - ✅ Response received in 7.34 seconds
+2025-11-03 13:42:28,337 - INFO - 📊 Response size: 8,294 characters
+2025-11-03 13:42:28,337 - INFO - 📊 Token usage:
+2025-11-03 13:42:28,337 - INFO -    Prompt tokens: 4,890
+2025-11-03 13:42:28,337 - INFO -    Completion tokens: 2,880
+2025-11-03 13:42:28,337 - INFO -    Total tokens: 7,770
+2025-11-03 13:42:28,341 - INFO - Remediation report saved to: outputs\image_remediation\remediation_report_javaapp_v1_20251103_134023.md
+2025-11-03 13:42:28,349 - INFO - Successfully extracted Dockerfile (2228 chars)
+2025-11-03 13:42:28,354 - INFO - ✅ Extracted and saved Dockerfile to: outputs\image_remediation\Dockerfile.secured_javaapp_v1_20251103_134023
+2025-11-03 13:42:28,364 - INFO - 🔨 Starting validation pipeline: build → scan → compare → cleanup
+2025-11-03 13:42:28,366 - INFO - Validating secured Dockerfile...
+2025-11-03 13:42:28,396 - INFO - Building secured image: javaapp_v1_secured_20251103_134023
+2025-11-03 13:42:34,853 - INFO - ✅ Validation complete: validation_skipped_missing_files
+2025-11-03 13:42:34,856 - INFO - Indexing remediation artifacts into ChromaDB...
+2025-11-03 13:42:34,905 - INFO - Indexing remediation_report from outputs\image_remediation\remediation_report_javaapp_v1_20251103_134023.md (9,552 chars)
+2025-11-03 13:42:34,915 - INFO - Created 10 chunks from remediation_report
+2025-11-03 13:42:34,919 - INFO - ✅ Successfully prepared 10 chunks from remediation_report
+2025-11-03 13:42:34,922 - INFO - Indexing dockerfile_secured from outputs\image_remediation\Dockerfile.secured_javaapp_v1_20251103_134023 (2,228 chars)
+2025-11-03 13:42:34,922 - INFO - Created 3 chunks from dockerfile_secured
+2025-11-03 13:42:34,922 - INFO - ✅ Successfully prepared 3 chunks from dockerfile_secured
+2025-11-03 13:42:37,285 - INFO - ✅ Successfully indexed 13 document chunks for javaapp:v1_remediation
+2025-11-03 13:42:37,288 - INFO - Image security pipeline completed successfully
+2025-11-03 13:55:31,191 - INFO - Setting up RAG system with ChromaDB...
+2025-11-03 13:55:31,222 - INFO - Loaded existing security_scans collection
+2025-11-03 13:55:31,222 - INFO - RAG system ready
+2025-11-03 13:55:31,224 - INFO - Starting image security pipeline for: vulnerable-go-app:v1
+2025-11-03 13:55:31,601 - INFO - Starting Trivy scan for vulnerable-go-app:v1
+2025-11-03 13:55:34,956 - INFO - Trivy scan completed successfully
+2025-11-03 13:55:34,957 - INFO - Indexing Trivy scan results into ChromaDB...
+2025-11-03 13:55:34,961 - INFO - Indexing trivy_txt from outputs\scans\trivy_scan_vulnerable-go-app_v1_20251103_135531.txt (555,126 chars)
+2025-11-03 13:55:34,972 - INFO - Created 662 chunks from trivy_txt
+2025-11-03 13:55:34,974 - INFO - ✅ Successfully prepared 662 chunks from trivy_txt
+2025-11-03 13:55:34,982 - INFO - Indexing trivy_json from outputs\scans\trivy_scan_vulnerable-go-app_v1_20251103_135531.json (3,611,287 chars)
+2025-11-03 13:55:34,997 - INFO - Created 3841 chunks from trivy_json
+2025-11-03 13:55:35,025 - INFO - ✅ Successfully prepared 3841 chunks from trivy_json
+2025-11-03 13:55:35,029 - INFO - Indexing sbom_cyclonedx from outputs\scans\sbom_cyclonedx_vulnerable-go-app_v1_20251103_135531.json (62,582 chars)
+2025-11-03 13:55:35,030 - INFO - Created 65 chunks from sbom_cyclonedx
+2025-11-03 13:55:35,032 - INFO - ✅ Successfully prepared 65 chunks from sbom_cyclonedx
+2025-11-03 14:01:18,486 - INFO - Security pipeline initialized. Output: outputs
+2025-11-03 14:01:22,830 - INFO - Setting up RAG system with ChromaDB...
+2025-11-03 14:01:22,916 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-11-03 14:01:23,133 - INFO - Loaded existing security_scans collection
+2025-11-03 14:01:23,133 - INFO - RAG system ready
+2025-11-03 14:07:34,493 - INFO - Security pipeline initialized. Output: outputs
+2025-11-03 14:07:44,130 - INFO - Setting up RAG system with ChromaDB...
+2025-11-03 14:07:44,251 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-11-03 14:07:44,435 - INFO - Loaded existing security_scans collection
+2025-11-03 14:07:44,435 - INFO - RAG system ready
+2025-11-03 14:07:44,435 - INFO - Starting image security pipeline for: vulnerable-go-app:v1
+2025-11-03 14:07:44,792 - INFO - Starting Trivy scan for vulnerable-go-app:v1
+2025-11-03 14:07:48,384 - INFO - Trivy scan completed successfully
+2025-11-03 14:07:48,386 - INFO - Indexing Trivy scan results into ChromaDB...
+2025-11-03 14:07:48,393 - INFO - Indexing trivy_txt from outputs\scans\trivy_scan_vulnerable-go-app_v1_20251103_140744.txt (555,126 chars)
+2025-11-03 14:07:48,398 - INFO - Created 662 chunks from trivy_txt
+2025-11-03 14:07:48,400 - INFO - ✅ Successfully prepared 662 chunks from trivy_txt
+2025-11-03 14:07:48,408 - INFO - Indexing trivy_json from outputs\scans\trivy_scan_vulnerable-go-app_v1_20251103_140744.json (3,611,286 chars)
+2025-11-03 14:07:48,423 - INFO - Created 3841 chunks from trivy_json
+2025-11-03 14:07:48,436 - INFO - ✅ Successfully prepared 3841 chunks from trivy_json
+2025-11-03 14:07:48,440 - INFO - Indexing sbom_cyclonedx from outputs\scans\sbom_cyclonedx_vulnerable-go-app_v1_20251103_140744.json (62,582 chars)
+2025-11-03 14:07:48,440 - INFO - Created 65 chunks from sbom_cyclonedx
+2025-11-03 14:07:48,440 - INFO - ✅ Successfully prepared 65 chunks from sbom_cyclonedx
+2025-11-03 14:16:31,125 - INFO - ✅ Successfully indexed 4568 document chunks for vulnerable-go-app:v1
+2025-11-03 14:16:31,129 - INFO - Generating image remediation...
+2025-11-03 14:16:31,265 - WARNING - Could not detect image type: 'NoneType' object has no attribute 'items'
+2025-11-03 14:16:31,309 - INFO - Parsed 881 vulnerabilities from JSON
+2025-11-03 14:16:31,320 - WARNING - Could not fetch versions for busybox in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:31,380 - WARNING - Could not fetch versions for libcrypto1.1 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:31,394 - WARNING - Could not fetch versions for libcrypto1.1 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:31,405 - WARNING - Could not fetch versions for libcrypto1.1 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:31,444 - WARNING - Could not fetch versions for libcrypto1.1 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:31,460 - WARNING - Could not fetch versions for libcrypto1.1 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:31,480 - WARNING - Could not fetch versions for libretls in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:31,502 - WARNING - Could not fetch versions for libssl1.1 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:31,518 - WARNING - Could not fetch versions for libssl1.1 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:31,546 - WARNING - Could not fetch versions for libssl1.1 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:31,560 - WARNING - Could not fetch versions for libssl1.1 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:31,586 - WARNING - Could not fetch versions for libssl1.1 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:31,602 - WARNING - Could not fetch versions for ssl_client in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:31,626 - WARNING - Could not fetch versions for zlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:31,650 - WARNING - Could not fetch versions for zlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:31,665 - WARNING - Could not fetch versions for github.com/gin-gonic/gin in go: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:31,678 - WARNING - Could not fetch versions for golang.org/x/crypto in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:31,693 - WARNING - Could not fetch versions for golang.org/x/crypto in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:31,715 - WARNING - Could not fetch versions for golang.org/x/crypto in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:31,738 - WARNING - Could not fetch versions for golang.org/x/crypto in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:31,758 - WARNING - Could not fetch versions for golang.org/x/crypto in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:31,780 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:31,815 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:31,864 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:31,903 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:31,937 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:31,972 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:32,002 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:32,023 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:32,054 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:32,071 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:32,089 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:32,103 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:32,126 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:32,150 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:32,193 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:32,217 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:32,238 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:32,266 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:32,287 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:32,312 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:32,345 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:32,367 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:32,393 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:32,418 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:32,452 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:32,492 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:32,501 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:32,514 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:32,537 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:32,550 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:32,569 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:32,587 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:32,601 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:32,630 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:32,646 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:32,661 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:32,682 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:32,699 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:32,714 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:32,728 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:32,746 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:32,759 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:32,774 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:32,787 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:32,799 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:32,810 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:32,824 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:32,834 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:32,848 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:32,860 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:32,881 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:32,901 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:32,914 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:32,928 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:32,947 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:32,963 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:32,978 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:32,998 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,014 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,028 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,044 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,055 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,066 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,076 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,087 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,097 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,108 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,118 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,130 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,142 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,152 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,161 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,170 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,183 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,195 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,205 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,217 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,228 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,242 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,259 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,288 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,303 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,315 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,325 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,335 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,348 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,363 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,368 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,378 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,390 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,400 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,410 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,429 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,442 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,447 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,462 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,474 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,488 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,499 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,511 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,524 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,537 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,547 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,558 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,568 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,579 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,586 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,591 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,615 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,631 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,644 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,658 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,709 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,819 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,866 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,894 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,916 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,926 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,939 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,951 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,958 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,963 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,977 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,990 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:33,998 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,021 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,039 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,048 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,062 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,082 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,093 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,102 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,117 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,135 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,151 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,165 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,179 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,192 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,204 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,218 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,229 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,240 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,252 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,269 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,290 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,311 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,328 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,361 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,380 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,401 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,419 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,431 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,449 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,462 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,473 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,501 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,512 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,517 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,532 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,543 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,563 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,574 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,585 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,599 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,612 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,628 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,638 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,649 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,662 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,675 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,685 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,700 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,712 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,725 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,741 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,757 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,765 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,779 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,807 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,825 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,859 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,890 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,913 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,932 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,951 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,970 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:34,991 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,017 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,038 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,050 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,062 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,073 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,083 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,095 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,115 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,134 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,146 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,161 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,170 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,184 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,198 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,215 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,223 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,237 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,248 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,261 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,271 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,284 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,293 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,312 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,328 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,337 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,350 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,361 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,374 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,391 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,407 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,417 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,431 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,446 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,477 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,491 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,506 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,513 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,527 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,532 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,547 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,561 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,573 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,576 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,585 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,595 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,614 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,629 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,636 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,650 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,660 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,676 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,689 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,699 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,712 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,721 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,736 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,747 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,759 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,775 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,790 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,800 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,810 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,819 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,832 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,842 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,850 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,862 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,875 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,886 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,902 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,912 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,924 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,933 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,945 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,955 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,964 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:35,992 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,003 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,011 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,021 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,035 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,045 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,074 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,094 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,107 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,130 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,132 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,160 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,164 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,180 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,189 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,201 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,211 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,217 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,231 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,239 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,249 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,259 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,268 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,278 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,288 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,295 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,305 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,317 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,325 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,333 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,345 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,357 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,370 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,432 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,515 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,590 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,633 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,641 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,657 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,669 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,681 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,694 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,715 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,729 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,744 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,755 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,768 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,780 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,793 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,805 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,819 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,831 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,844 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,858 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,869 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,884 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,900 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,912 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,922 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,946 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,960 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,971 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:36,997 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,012 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,025 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,037 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,062 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,082 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,106 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,119 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,130 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,151 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,172 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,192 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,215 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,226 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,241 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,253 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,269 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,281 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,292 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,306 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,317 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,330 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,340 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,352 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,365 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,376 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,389 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,402 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,412 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,426 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,441 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,450 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,463 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,475 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,495 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,507 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,516 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,531 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,544 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,555 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,566 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,579 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,600 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,620 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,652 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,675 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,689 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,701 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,722 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,732 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,750 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,766 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,778 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,787 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,799 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,815 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,825 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,836 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,855 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,867 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,889 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,902 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,914 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,927 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,947 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,961 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,972 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:37,985 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,002 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,022 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,040 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,051 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,063 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,074 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,081 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,111 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,126 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,137 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,147 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,158 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,175 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,185 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,200 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,211 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,227 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,239 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,251 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,263 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,273 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,284 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,299 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,312 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,324 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,335 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,347 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,362 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,373 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,387 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,397 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,409 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,427 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,440 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,449 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,462 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,480 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,493 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,509 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,526 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,535 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,549 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,560 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,571 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,594 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,614 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,633 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,649 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,664 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,677 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,694 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,707 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,721 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,745 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,764 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,788 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,802 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,822 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,838 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,851 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,874 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,893 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,907 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,917 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,931 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,946 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,961 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,973 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,982 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:38,993 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,003 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,016 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,078 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,134 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,182 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,195 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,209 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,219 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,228 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,238 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,272 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,286 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,302 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,318 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,329 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,344 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,353 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,366 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,380 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,392 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,402 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,423 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,442 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,457 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,468 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,485 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,497 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,509 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,520 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,531 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,543 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,553 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,567 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,581 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,594 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,608 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,618 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,631 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,643 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,653 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,663 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,675 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,689 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,699 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,711 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,730 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,744 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,753 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,766 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,778 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,792 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,806 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,819 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,837 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,861 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,874 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,901 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,913 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,925 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,936 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,948 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,958 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,969 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,983 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:39,993 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,007 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,015 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,029 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,044 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,057 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,078 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,092 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,113 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,128 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,139 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,149 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,158 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,161 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,178 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,181 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,197 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,208 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,215 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,233 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,243 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,254 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,264 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,276 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,286 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,295 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,299 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,314 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,323 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,332 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,340 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,353 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,367 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,381 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,395 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,402 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,416 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,430 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,441 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,448 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,458 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,474 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,482 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,492 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,507 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,516 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,526 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,535 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,548 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,559 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,564 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,577 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,583 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,597 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,609 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,617 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,630 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,642 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,652 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,662 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,670 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,683 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,693 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,705 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,715 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,730 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,740 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,757 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,774 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,784 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,792 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,806 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,818 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,828 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,842 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,848 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,864 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,884 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,906 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,932 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,947 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,958 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,969 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,980 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,993 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:40,999 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,013 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,018 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,028 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,040 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,057 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,068 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,084 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,105 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,116 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,128 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,141 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,154 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,164 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,174 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,179 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,190 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,195 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,209 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,218 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,228 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,233 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,243 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,256 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,264 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,275 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,285 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,295 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,301 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,312 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,316 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,363 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,381 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,399 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,414 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,427 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,440 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,451 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,472 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,490 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,507 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,527 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,540 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,551 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,568 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,581 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,595 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,606 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,613 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,663 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,731 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,780 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,797 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,804 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,820 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,828 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,842 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,852 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,857 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,876 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,887 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,905 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,913 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,925 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,935 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,945 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,957 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,971 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:41,986 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,003 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,017 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,028 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,043 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,049 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,065 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,074 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,095 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,109 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,117 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,131 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,143 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,163 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,176 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,185 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,196 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,206 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,213 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,222 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,226 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,243 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,245 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,261 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,264 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,277 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,292 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,303 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,312 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,329 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,341 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,353 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,366 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,375 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,384 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,396 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,408 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,412 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,431 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,447 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,466 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,474 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,483 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,503 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,513 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,523 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,533 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,542 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,550 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,565 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,576 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,586 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,600 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,610 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,625 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,631 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,655 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,664 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,676 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,682 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,693 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,706 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,716 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,726 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,733 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,745 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,756 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,769 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,779 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,790 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,800 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,812 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,821 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,831 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,842 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,852 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,866 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,877 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,891 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,894 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,917 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,927 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,935 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,945 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,957 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,969 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,979 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:42,991 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,000 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,010 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,021 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,031 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,041 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,053 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,078 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,096 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,115 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,129 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,152 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,163 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,173 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,188 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,198 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,207 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,215 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,223 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,229 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,241 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,246 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,260 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,271 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,278 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,282 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,292 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,301 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,311 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,324 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,332 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,340 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,351 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,361 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,363 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,376 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,395 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,401 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,414 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,421 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,430 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,448 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,459 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,471 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,486 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,496 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,501 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,515 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,524 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,534 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,546 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,558 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,563 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,579 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,584 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,596 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,599 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,617 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,631 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,649 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,663 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,677 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,697 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,711 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,720 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,733 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,745 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,759 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,768 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,777 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,787 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,796 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,805 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,813 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,816 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,827 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,840 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,853 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,863 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,871 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,889 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,902 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,913 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,924 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,930 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,943 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,957 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,966 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,976 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:43,995 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:44,003 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:44,014 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:44,027 - WARNING - Could not fetch versions for stdlib in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:16:44,030 - INFO - API key loaded from API_KEY.txt
+2025-11-03 14:16:44,030 - INFO - LLM client initialized (provider=groq, model=openai/gpt-oss-120b)
+2025-11-03 14:16:50,286 - INFO - Retrieved 13 relevant documents from RAG
+2025-11-03 14:16:50,286 - INFO - ✅ Loaded external prompt from: prompt.txt (9645 chars)
+2025-11-03 14:16:50,417 - INFO - 📊 LLM Query Details:
+2025-11-03 14:16:50,418 - INFO -    Model: openai/gpt-oss-120b
+2025-11-03 14:16:50,419 - INFO -    Provider: groq
+2025-11-03 14:16:50,419 - INFO -    Prompt size: 13,023 characters
+2025-11-03 14:16:50,420 - INFO -    Context size: 4,043 characters
+2025-11-03 14:16:50,420 - INFO -    Total input: 17,077 characters
+2025-11-03 14:16:50,421 - INFO -    Max tokens: 8,000
+2025-11-03 14:16:50,421 - INFO -    Estimated input tokens: ~4,269
+2025-11-03 14:16:50,422 - INFO - 🔧 Using GPT-OSS-120B optimized settings...
+2025-11-03 14:16:50,422 - INFO - 🚀 Sending request to groq API (openai/gpt-oss-120b)...
+2025-11-03 14:16:59,610 - INFO - ✅ Response received in 9.19 seconds
+2025-11-03 14:16:59,611 - INFO - 📊 Response size: 6,054 characters
+2025-11-03 14:16:59,611 - INFO - 📊 Token usage:
+2025-11-03 14:16:59,611 - INFO -    Prompt tokens: 4,630
+2025-11-03 14:16:59,613 - INFO -    Completion tokens: 2,945
+2025-11-03 14:16:59,613 - INFO -    Total tokens: 7,575
+2025-11-03 14:16:59,615 - INFO - Remediation report saved to: outputs\image_remediation\remediation_report_vulnerable-go-app_v1_20251103_140744.md
+2025-11-03 14:16:59,625 - INFO - Successfully extracted Dockerfile (1111 chars)
+2025-11-03 14:16:59,630 - INFO - ✅ Extracted and saved Dockerfile to: outputs\image_remediation\Dockerfile.secured_vulnerable-go-app_v1_20251103_140744
+2025-11-03 14:16:59,632 - INFO - 🔨 Starting validation pipeline: build → scan → compare → cleanup
+2025-11-03 14:16:59,634 - INFO - Validating secured Dockerfile...
+2025-11-03 14:16:59,683 - INFO - Created test Dockerfile: outputs\image_remediation\Dockerfile.secured_vulnerable-go-app_v1_20251103_140744.test
+2025-11-03 14:16:59,694 - INFO - Building secured image: vulnerable-go-app_v1_secured_20251103_140744
+2025-11-03 14:17:05,708 - INFO - ✅ Validation complete: validation_skipped_missing_files
+2025-11-03 14:17:05,709 - INFO - Indexing remediation artifacts into ChromaDB...
+2025-11-03 14:17:05,747 - INFO - Indexing remediation_report from outputs\image_remediation\remediation_report_vulnerable-go-app_v1_20251103_140744.md (7,405 chars)
+2025-11-03 14:17:05,749 - INFO - Created 8 chunks from remediation_report
+2025-11-03 14:17:05,750 - INFO - ✅ Successfully prepared 8 chunks from remediation_report
+2025-11-03 14:17:05,752 - INFO - Indexing dockerfile_secured from outputs\image_remediation\Dockerfile.secured_vulnerable-go-app_v1_20251103_140744 (1,111 chars)
+2025-11-03 14:17:05,755 - INFO - Created 2 chunks from dockerfile_secured
+2025-11-03 14:17:05,759 - INFO - ✅ Successfully prepared 2 chunks from dockerfile_secured
+2025-11-03 14:17:07,696 - INFO - ✅ Successfully indexed 10 document chunks for vulnerable-go-app:v1_remediation
+2025-11-03 14:17:07,696 - INFO - Image security pipeline completed successfully
+2025-11-03 14:36:54,113 - INFO - Security pipeline initialized. Output: outputs
+2025-11-03 14:37:59,841 - INFO - Setting up RAG system with ChromaDB...
+2025-11-03 14:37:59,937 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-11-03 14:38:00,126 - INFO - Loaded existing security_scans collection
+2025-11-03 14:38:00,128 - INFO - RAG system ready
+2025-11-03 14:38:00,128 - INFO - Starting image security pipeline for: javaapp:v1
+2025-11-03 14:38:00,487 - INFO - Starting Trivy scan for javaapp:v1
+2025-11-03 14:38:02,246 - INFO - Trivy scan completed successfully
+2025-11-03 14:38:02,250 - INFO - Indexing Trivy scan results into ChromaDB...
+2025-11-03 14:38:02,252 - INFO - Indexing trivy_txt from outputs\scans\trivy_scan_javaapp_v1_20251103_143800.txt (46,300 chars)
+2025-11-03 14:38:02,260 - INFO - Created 52 chunks from trivy_txt
+2025-11-03 14:38:02,262 - INFO - ✅ Successfully prepared 52 chunks from trivy_txt
+2025-11-03 14:38:02,267 - INFO - Indexing trivy_json from outputs\scans\trivy_scan_javaapp_v1_20251103_143800.json (350,842 chars)
+2025-11-03 14:38:02,283 - INFO - Created 369 chunks from trivy_json
+2025-11-03 14:38:02,291 - INFO - ✅ Successfully prepared 369 chunks from trivy_json
+2025-11-03 14:38:02,301 - INFO - Indexing sbom_cyclonedx from outputs\scans\sbom_cyclonedx_javaapp_v1_20251103_143800.json (177,917 chars)
+2025-11-03 14:38:02,306 - INFO - Created 183 chunks from sbom_cyclonedx
+2025-11-03 14:38:02,313 - INFO - ✅ Successfully prepared 183 chunks from sbom_cyclonedx
+2025-11-03 14:39:24,184 - INFO - ✅ Successfully indexed 604 document chunks for javaapp:v1
+2025-11-03 14:39:24,187 - INFO - Generating image remediation...
+2025-11-03 14:39:24,326 - WARNING - Could not detect image type: 'NoneType' object has no attribute 'items'
+2025-11-03 14:39:24,330 - INFO - Parsed 76 vulnerabilities from JSON
+2025-11-03 14:39:24,345 - WARNING - Could not fetch versions for bash in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:24,388 - WARNING - Could not fetch versions for dpkg in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:24,409 - WARNING - Could not fetch versions for e2fsprogs in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:24,450 - WARNING - Could not fetch versions for gzip in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:24,469 - WARNING - Could not fetch versions for libc-bin in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:24,484 - WARNING - Could not fetch versions for libc-bin in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:24,500 - WARNING - Could not fetch versions for libc-bin in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:24,513 - WARNING - Could not fetch versions for libc-bin in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:24,531 - WARNING - Could not fetch versions for libc-bin in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:24,549 - WARNING - Could not fetch versions for libc6 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:24,562 - WARNING - Could not fetch versions for libc6 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:24,584 - WARNING - Could not fetch versions for libc6 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:24,611 - WARNING - Could not fetch versions for libc6 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:24,624 - WARNING - Could not fetch versions for libc6 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:24,635 - WARNING - Could not fetch versions for libcom-err2 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:24,648 - WARNING - Could not fetch versions for libdb5.3 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:24,667 - WARNING - Could not fetch versions for libext2fs2 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:24,677 - WARNING - Could not fetch versions for libgcrypt20 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:24,691 - WARNING - Could not fetch versions for libgnutls30 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:24,700 - WARNING - Could not fetch versions for libgnutls30 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:24,729 - WARNING - Could not fetch versions for libgnutls30 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:24,740 - WARNING - Could not fetch versions for libgnutls30 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:24,778 - WARNING - Could not fetch versions for libgnutls30 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:24,796 - WARNING - Could not fetch versions for libgnutls30 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:24,814 - WARNING - Could not fetch versions for libgssapi-krb5-2 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:24,831 - WARNING - Could not fetch versions for libgssapi-krb5-2 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:24,867 - WARNING - Could not fetch versions for libgssapi-krb5-2 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:24,883 - WARNING - Could not fetch versions for libk5crypto3 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:24,903 - WARNING - Could not fetch versions for libk5crypto3 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:24,920 - WARNING - Could not fetch versions for libk5crypto3 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:24,950 - WARNING - Could not fetch versions for libkrb5-3 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:24,969 - WARNING - Could not fetch versions for libkrb5-3 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:25,001 - WARNING - Could not fetch versions for libkrb5-3 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:25,012 - WARNING - Could not fetch versions for libkrb5support0 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:25,028 - WARNING - Could not fetch versions for libkrb5support0 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:25,045 - WARNING - Could not fetch versions for libkrb5support0 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:25,057 - WARNING - Could not fetch versions for liblzma5 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:25,070 - WARNING - Could not fetch versions for libpam-modules in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:25,089 - WARNING - Could not fetch versions for libpam-modules-bin in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:25,101 - WARNING - Could not fetch versions for libpam-runtime in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:25,118 - WARNING - Could not fetch versions for libpam0g in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:25,144 - WARNING - Could not fetch versions for libpcre2-8-0 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:25,164 - WARNING - Could not fetch versions for libpcre2-8-0 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:25,196 - WARNING - Could not fetch versions for libss2 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:25,228 - WARNING - Could not fetch versions for libssl1.1 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:25,252 - WARNING - Could not fetch versions for libssl1.1 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:25,262 - WARNING - Could not fetch versions for libssl1.1 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:25,282 - WARNING - Could not fetch versions for libssl1.1 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:25,308 - WARNING - Could not fetch versions for libssl1.1 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:25,332 - WARNING - Could not fetch versions for libssl1.1 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:25,365 - WARNING - Could not fetch versions for libsystemd0 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:25,384 - WARNING - Could not fetch versions for libsystemd0 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:25,408 - WARNING - Could not fetch versions for libtasn1-6 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:25,443 - WARNING - Could not fetch versions for libtinfo6 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:25,461 - WARNING - Could not fetch versions for libtinfo6 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:25,483 - WARNING - Could not fetch versions for libtirpc-common in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:25,501 - WARNING - Could not fetch versions for libtirpc3 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:25,518 - WARNING - Could not fetch versions for libudev1 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:25,529 - WARNING - Could not fetch versions for libudev1 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:25,541 - WARNING - Could not fetch versions for libzstd1 in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:25,554 - WARNING - Could not fetch versions for logsave in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:25,565 - WARNING - Could not fetch versions for ncurses-base in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:25,579 - WARNING - Could not fetch versions for ncurses-base in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:25,601 - WARNING - Could not fetch versions for ncurses-bin in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:25,617 - WARNING - Could not fetch versions for ncurses-bin in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:25,633 - WARNING - Could not fetch versions for openssl in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:25,658 - WARNING - Could not fetch versions for openssl in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:25,669 - WARNING - Could not fetch versions for openssl in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:25,696 - WARNING - Could not fetch versions for openssl in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:25,715 - WARNING - Could not fetch versions for openssl in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:25,736 - WARNING - Could not fetch versions for openssl in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:25,766 - WARNING - Could not fetch versions for perl-base in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:25,778 - WARNING - Could not fetch versions for perl-base in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:25,802 - WARNING - Could not fetch versions for perl-base in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:25,822 - WARNING - Could not fetch versions for zlib1g in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:25,839 - WARNING - Could not fetch versions for zlib1g in ruby: [WinError 2] The system cannot find the file specified
+2025-11-03 14:39:25,843 - INFO - API key loaded from API_KEY.txt
+2025-11-03 14:39:25,844 - INFO - LLM client initialized (provider=groq, model=openai/gpt-oss-120b)
+2025-11-03 14:39:31,368 - INFO - Retrieved 19 relevant documents from RAG
+2025-11-03 14:39:31,370 - INFO - ✅ Loaded external prompt from: prompt.txt (9645 chars)
+2025-11-03 14:39:31,538 - INFO - 📊 LLM Query Details:
+2025-11-03 14:39:31,538 - INFO -    Model: openai/gpt-oss-120b
+2025-11-03 14:39:31,539 - INFO -    Provider: groq
+2025-11-03 14:39:31,540 - INFO -    Prompt size: 13,057 characters
+2025-11-03 14:39:31,540 - INFO -    Context size: 4,534 characters
+2025-11-03 14:39:31,540 - INFO -    Total input: 17,602 characters
+2025-11-03 14:39:31,540 - INFO -    Max tokens: 8,000
+2025-11-03 14:39:31,541 - INFO -    Estimated input tokens: ~4,400
+2025-11-03 14:39:31,541 - INFO - 🔧 Using GPT-OSS-120B optimized settings...
+2025-11-03 14:39:31,541 - INFO - 🚀 Sending request to groq API (openai/gpt-oss-120b)...
+2025-11-03 14:39:40,421 - INFO - ✅ Response received in 8.88 seconds
+2025-11-03 14:39:40,421 - INFO - 📊 Response size: 9,181 characters
+2025-11-03 14:39:40,421 - INFO - 📊 Token usage:
+2025-11-03 14:39:40,421 - INFO -    Prompt tokens: 4,658
+2025-11-03 14:39:40,421 - INFO -    Completion tokens: 3,036
+2025-11-03 14:39:40,421 - INFO -    Total tokens: 7,694
+2025-11-03 14:39:40,426 - INFO - Remediation report saved to: outputs\image_remediation\remediation_report_javaapp_v1_20251103_143800.md
+2025-11-03 14:39:40,435 - INFO - Successfully extracted Dockerfile (2088 chars)
+2025-11-03 14:39:40,438 - INFO - ✅ Extracted and saved Dockerfile to: outputs\image_remediation\Dockerfile.secured_javaapp_v1_20251103_143800
+2025-11-03 14:39:40,443 - INFO - 🔨 Starting validation pipeline: build → scan → compare → cleanup
+2025-11-03 14:39:40,445 - INFO - Validating secured Dockerfile...
+2025-11-03 14:39:40,472 - INFO - Building secured image: javaapp_v1_secured_20251103_143800
+2025-11-03 14:39:46,906 - INFO - ✅ Validation complete: validation_skipped_missing_files
+2025-11-03 14:39:46,933 - INFO - Indexing remediation artifacts into ChromaDB...
+2025-11-03 14:39:47,032 - INFO - Indexing remediation_report from outputs\image_remediation\remediation_report_javaapp_v1_20251103_143800.md (10,439 chars)
+2025-11-03 14:39:47,036 - INFO - Created 11 chunks from remediation_report
+2025-11-03 14:39:47,041 - INFO - ✅ Successfully prepared 11 chunks from remediation_report
+2025-11-03 14:39:47,048 - INFO - Indexing dockerfile_secured from outputs\image_remediation\Dockerfile.secured_javaapp_v1_20251103_143800 (2,088 chars)
+2025-11-03 14:39:47,050 - INFO - Created 3 chunks from dockerfile_secured
+2025-11-03 14:39:47,053 - INFO - ✅ Successfully prepared 3 chunks from dockerfile_secured
+2025-11-03 14:39:49,252 - INFO - ✅ Successfully indexed 14 document chunks for javaapp:v1_remediation
+2025-11-03 14:39:49,252 - INFO - Image security pipeline completed successfully
+2025-11-03 14:44:07,167 - INFO - Setting up RAG system with ChromaDB...
+2025-11-03 14:44:07,211 - INFO - Loaded existing security_scans collection
+2025-11-03 14:44:07,213 - INFO - RAG system ready
