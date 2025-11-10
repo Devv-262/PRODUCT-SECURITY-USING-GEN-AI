@@ -90,8 +90,7 @@ Chatbot
 * A comprehensive markdown report summarizing findings, fixes, and improvements is generated.
 * The entire workflow is orchestrated by EnhancedSecurityPipeline for logging and directory management.
 * Final results include total issues, improved manifests, and a remediation report summarizing before/after security posture.
-
-  ![Image Security Flowchart]()
+  ![Image Security Flowchart](Kubernetes Manifest Security Flowchart.png)
 
 ### RAG Engine
 * The RAG system stores all SBOMs, scan outputs, and remediation metadata into ChromaDB for semantic retrieval.
