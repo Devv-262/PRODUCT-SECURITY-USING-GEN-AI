@@ -63,8 +63,7 @@ Chatbot
 * If dependency or build errors occur, the system auto-fixes version conflicts and retries.
 * If improvement is detected, the system keeps the new image and updates a markdown remediation report summarizing improvements.
 * The report includes vulnerability counts, version changes, CVE summaries, and final verification results — providing a complete before-and-after comparison of image security.
-
-
+![Image Security Flowchart](diagram-export-11-3-2025-10_55_09-AM.png)
   
 
 ### Pod Security
