@@ -2,7 +2,7 @@
 
 This project demonstrates an end-to-end security automation pipeline for **Docker images** and **Kubernetes manifests**, powered by **Generative AI** and **RAG (Retrieval-Augmented Generation)** into a single unified pipeline. It automatically scans Docker images, analyzes Kubernetes manifests, generates SBOMs, detects vulnerabilities, and stores all security data in a vector database. Using Retrieval-Augmented Generation, the system provides context-aware remediation by feeding real scan outputs into a lightweight LLM that produces secure Dockerfiles, fixed manifests, and detailed remediation reports.
 
-The pipeline goes beyond static scanning by enabling iterative self-healing: each fix is regenerated, rebuilt, and rescanned until high and critical issues are resolved. The built-in Security Chatbot allows users to interact with the entire system, ask questions about vulnerabilities, understand failures, and receive accurate, data-driven explanations. Designed for real-world DevSecOps workflows, this solution automates product hardening, reduces manual analysis time, and ensures consistent, reliable security improvements across containers and Kubernetes deployments.**. It was presented at **Nokia University Day 2025** and **won the Exhibition Award**.
+The pipeline goes beyond static scanning by enabling iterative self-healing: each fix is regenerated, rebuilt, and rescanned until high and critical issues are resolved. The built-in Security Chatbot allows users to interact with the entire system, ask questions about vulnerabilities, understand failures, and receive accurate, data-driven explanations. Designed for real-world DevSecOps workflows, this solution automates product hardening, reduces manual analysis time, and ensures consistent, reliable security improvements across containers and **Kubernetes deployments.**. It was presented at **Nokia University Day 2025** and **won the best industry implemented Award**.
 
 The system scans container images, analyzes Kubernetes manifests, stores findings in a vector database, and uses a lightweight LLM to automatically generate fixes, secure configurations, and reports.
 
@@ -63,6 +63,8 @@ Chatbot
 * If dependency or build errors occur, the system auto-fixes version conflicts and retries.
 * If improvement is detected, the system keeps the new image and updates a markdown remediation report summarizing improvements.
 * The report includes vulnerability counts, version changes, CVE summaries, and final verification results — providing a complete before-and-after comparison of image security.
+
+  
 
 ### Pod Security
 * PodSecurityAnalyzer module handles all pod-related scanning and remediation.
@@ -126,9 +128,36 @@ Chatbot
 
 ## Installation
 
-### 1. System Dependencies
-
+##### System Dependencies
 ```bash
 sudo apt update
-sudo apt install -y docker.io kubectl python3 python3-pip curl jq
+sudo apt install -y docker.io kubectl python3 python3-pip curl jq wget
+```
+
+##### Trivy Installation
+```bash
+wget https://github.com/aquasecurity/trivy/releases/latest/download/trivy_Linux-64bit.tar.gz
+tar -xvf trivy_Linux-64bit.tar.gz
+sudo mv trivy /usr/local/bin/
+```
+##### KubeScore Installation
+```bash
+wget https://github.com/zegl/kube-score/releases/latest/download/kube-score_ubuntu_amd64
+chmod +x kube-score_ubuntu_amd64
+sudo mv kube-score_ubuntu_amd64 /usr/local/bin/kube-score
+```
+##### Kubescape Installation
+```bash
+curl -s https://raw.githubusercontent.com/kubescape/kubescape/master/install.sh | /bin/bash
+```
+##### Kyverno CLI Installation
+```bash
+curl -LO https://github.com/kyverno/kyverno/releases/latest/download/kyverno-cli_linux_x86_64.tar.gz
+tar -xvf kyverno-cli_linux_x86_64.tar.gz
+sudo mv kyverno /usr/local/bin/
+```
+##### Python Dependencies
+```bash
+pip install -r requirements.txt
+```
 
