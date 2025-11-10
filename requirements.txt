@@ -1,0 +1,14 @@
+chromadb==0.5.3
+requests==2.31.0
+PyYAML==6.0.1
+packaging==23.2
+regex==2023.12.25
+python-dotenv==1.0.1
+sentence-transformers==2.6.1
+numpy==1.26.4
+jsonschema==4.22.0
+urllib3==2.2.2
+certifi==2024.6.2
+idna==3.7
+charset-normalizer==3.3.2
+rich==13.7.1
