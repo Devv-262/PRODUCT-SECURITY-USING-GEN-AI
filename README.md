@@ -162,3 +162,7 @@ sudo mv kyverno /usr/local/bin/
 pip install -r requirements.txt
 ```
 
+ ![WINNER OF NOKIA OPEN DAY 2025](nokia_project_winner_certificate.jpeg)
+ 
+
+
